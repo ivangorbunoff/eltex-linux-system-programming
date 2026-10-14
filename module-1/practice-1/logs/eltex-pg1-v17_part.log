@@ -1,0 +1,182 @@
+=== Раздел 2 ===
+$ ls<Tab><Tab>
+ls
+lsattr
+lsblk
+lsb_release
+lscpu
+lsfd
+lsinitramfs
+lsipc
+lsirq
+lslocks
+lslogins
+lsmem
+lsmod
+lsns
+lsof
+lspci
+lsusb
+$ $HIST<Tab><Tab>
+$HISTCMD
+$HISTCONTROL
+$HISTFILE
+$HISTFILESIZE
+$HISTSIZE
+$ echo "$HISTSIZE"
+1000
+$ ls -d .*
+.bash_history
+.bash_logout
+.bashrc
+.config
+.lesshst
+.local
+.profile
+.viminfo
+$ HISTTIMEFORMAT='%d.%m.%Y %H:%M:%S '
+$ date
+Пт 09 окт 2026 16:32:45 +07
+$ history | tail -n 5
+  157  09.10.2026 05:13:20 unset PROMPT_COMMAND
+  158  09.10.2026 16:32:39 echo '$ date' >> "${USER}_part.log"
+  159  09.10.2026 16:32:45 date | tee -a "${USER}_part.log"
+  160  09.10.2026 16:33:31 echo '$ history | tail -n 5' >> "${USER}_part.log"
+  161  09.10.2026 16:33:38 history | tail -n 5 | tee -a "${USER}_part.log"
+$ tail -n 5 "$HISTFILE"
+pwd
+ls
+less eltex-pg1-v17_part.log 
+screen -ls
+screen -S "$(whoami)_part2"
+$ PROMPT_COMMAND='history -a'
+$ date
+Пт 09 окт 2026 16:37:42 +07
+$ history | tail -n 5
+  167  09.10.2026 16:37:15 PROMPT_COMMAND='history -a'
+  168  09.10.2026 16:37:34 echo '$ date' >> "${USER}_part.log"
+  169  09.10.2026 16:37:42 date | tee -a "${USER}_part.log"
+  170  09.10.2026 16:37:55 echo '$ history | tail -n 5' >> "${USER}_part.log"
+  171  09.10.2026 16:38:19 history | tail -n 5 | tee -a "${USER}_part.log"
+$ tail -n 10 "$HISTFILE"
+#1791538654
+echo '$ date' >> "${USER}_part.log"
+#1791538662
+date | tee -a "${USER}_part.log"
+#1791538675
+echo '$ history | tail -n 5' >> "${USER}_part.log"
+#1791538699
+history | tail -n 5 | tee -a "${USER}_part.log"
+#1791538731
+echo '$ tail -n 10 "$HISTFILE"' >> "${USER}_part.log"
+$ DATE=$(date "+%d-%m-%Y")
+$ echo "$DATE"
+09-10-2026
+$ TIME=$(date "+%H:%M:%S")
+$ echo "$TIME"
+16:42:16
+$ DATE_TIME="$DATE $TIME"
+$ echo "$DATE_TIME"
+09-10-2026 16:42:16
+$ find -H /bin /sbin -maxdepth 1 -type f -name "*[0-9]*" -printf "%f\n"
+pod2html
+python3.11
+ssh-argv0
+c99-gcc
+x86_64-linux-gnu-gcc-ar-12
+base64
+x86_64-linux-gnu-gcc-ranlib-12
+enc2xs
+x86_64-linux-gnu-gcov-12
+pod2usage
+x86_64-linux-gnu-objdump
+sha224sum
+x86_64-linux-gnu-objcopy
+bzip2
+x86_64-linux-gnu-readelf
+x86_64-linux-gnu-ar
+grub-mkpasswd-pbkdf2
+md5sum
+bzip2recover
+grub-menulst2cfg
+x86_64-linux-gnu-cpp-12
+x86_64-linux-gnu-size
+x86_64-linux-gnu-gprofng
+x86_64-linux-gnu-gprof
+h2xs
+x86_64-linux-gnu-ranlib
+x86_64-linux-gnu-ld.gold
+x86_64-linux-gnu-as
+pod2text
+x86_64-linux-gnu-nm
+x86_64-linux-gnu-elfedit
+x86_64-linux-gnu-strip
+x86_64-linux-gnu-gcc-nm-12
+perl5.36.0
+x86_64-linux-gnu-ld.bfd
+pydoc3.11
+x86_64-linux-gnu-gcov-tool-12
+b2sum
+x86_64-linux-gnu-lto-dump-12
+pod2man
+sha1sum
+c89-gcc
+pl2pm
+h2ph
+x86_64-linux-gnu-c++filt
+sha512sum
+x86_64-linux-gnu-gcc-12
+x86_64-linux-gnu-gp-display-src
+base32
+x86_64-linux-gnu-gp-collect-app
+cpan5.36-x86_64-linux-gnu
+x86_64-linux-gnu-gp-archive
+sha384sum
+py3clean
+x86_64-linux-gnu-gcov-dump-12
+perl5.36-x86_64-linux-gnu
+x86_64-linux-gnu-strings
+x86_64-linux-gnu-gp-display-html
+pygettext3.11
+systemd-id128
+x86_64-linux-gnu-dwp
+bunzip2
+x86_64-linux-gnu-gp-display-text
+x86_64-linux-gnu-addr2line
+py3compile
+grub-syslinux2cfg
+diff3
+sha256sum
+dumpe2fs
+e2fsck
+e2freefrag
+e2undo
+e2scrub_all
+tune2fs
+e2image
+e4defrag
+mke2fs
+e4crypt
+killall5
+e2scrub
+resize2fs
+$ PS1='\u@\h-$(date +%H:%M)> '
+$ export PS1
+$ bash --norc
+$ echo "$PS1"
+\u@\h-$(date +%H:%M)> 
+$ exit
+$ mkdir "$(date +%Y)"-{01..12}
+$ ls -d "$(date +%Y)"-*
+2026-01
+2026-02
+2026-03
+2026-04
+2026-05
+2026-06
+2026-07
+2026-08
+2026-09
+2026-10
+2026-11
+2026-12

@@ -1,31 +1,48 @@
 $ cd ~
+
 $ touch "${USER}_part3.log"
+
 $ mkdir -p D1/D2/D3
+
 $ touch D1/D2/file.txt
+
 $ echo 'Hello world' > D1/D2/file.txt
+
 $ cat D1/D2/file.txt
 Hello world
+
 $ ln D1/D2/file.txt D1/D2/D3/file_hard
+
 $ ln -s ../file.txt D1/D2/D3/file_sym
+
 $ ls -li D1/D2/file.txt D1/D2/D3/file_hard D1/D2/D3/file_sym
 655463 -rw-r--r-- 2 eltex-pg1-v17 eltex-pg1-v17 12 окт  9 18:21 D1/D2/D3/file_hard
 655464 lrwxrwxrwx 1 eltex-pg1-v17 eltex-pg1-v17 11 окт  9 19:02 D1/D2/D3/file_sym -> ../file.txt
 655463 -rw-r--r-- 2 eltex-pg1-v17 eltex-pg1-v17 12 окт  9 18:21 D1/D2/file.txt
+
 $ cat D1/D2/D3/file_hard
 Hello world
+
 $ cat D1/D2/D3/file_sym
 Hello world
+
 $ mv D1/D2/file.txt D1/
+
 $ cat D1/D2/D3/file_hard
 Hello world
+
 $ cat D1/D2/D3/file_sym
 cat: D1/D2/D3/file_sym: No such file or directory
+
 $ ls -li D1/file.txt D1/D2/D3/file_hard D1/D2/D3/file_sym
 655463 -rw-r--r-- 2 eltex-pg1-v17 eltex-pg1-v17 12 окт  9 18:21 D1/D2/D3/file_hard
 655464 lrwxrwxrwx 1 eltex-pg1-v17 eltex-pg1-v17 11 окт  9 19:02 D1/D2/D3/file_sym -> ../file.txt
 655463 -rw-r--r-- 2 eltex-pg1-v17 eltex-pg1-v17 12 окт  9 18:21 D1/file.txt
+
 $ rm -r D1/D2
+
 $ find / -type f -size +20M -exec du -h {} + 2>/dev/null | awk '$1 ~ /G$/ || ($1 ~ /M$/ && $1+0 > 20) {print substr($0, index($0,$2))}' > "${USER}_part3_gt20M.log"
+
 $ du -h $(cat "${USER}_part3_gt20M.log")
 31M	/usr/bin/x86_64-linux-gnu-lto-dump-12
 31M	/usr/lib/gcc/x86_64-linux-gnu/12/lto1
@@ -58,6 +75,7 @@ $ du -h $(cat "${USER}_part3_gt20M.log")
 48M	/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_binary-amd64_Packages
 49M	/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_source_Sources
 32M	/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_i18n_Translation-en
+
 $ find ~ -type f -mmin -1440
 /home/eltex-pg1-v17/.viminfo
 /home/eltex-pg1-v17/.lesshst
@@ -66,10 +84,13 @@ $ find ~ -type f -mmin -1440
 /home/eltex-pg1-v17/.bash_history
 /home/eltex-pg1-v17/eltex-pg1-v17_part.log
 /home/eltex-pg1-v17/eltex-pg1-v17_part3_gt20M.log
+
 $ which find
 /usr/bin/find
+
 $ file /usr/bin/find
 /usr/bin/find: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5545a6c7162d325fbe5ffabcbfe4e5521b66ce70, for GNU/Linux 3.2.0, stripped
+
 $ file /boot/initrd.img*
 /boot/initrd.img-6.1.0-44-amd64: ASCII cpio archive (SVR4 with no CRC)
 /boot/initrd.img-6.1.0-50-amd64: ASCII cpio archive (SVR4 with no CRC)

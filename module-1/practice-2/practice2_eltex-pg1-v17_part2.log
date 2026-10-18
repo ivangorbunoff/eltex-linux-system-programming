@@ -1,0 +1,2101 @@
+# journalctl -b -o short-monotonic --no-pager | awk -F'[][]' '/^\[/ && $2 + 0 < 20'
+[    0.000000] localhost kernel: Linux version 6.8.0-55-generic (buildd@lcy02-amd64-095) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 (Ubuntu 6.8.0-55.57-generic 6.8.12)
+[    0.000000] localhost kernel: Command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+[    0.000000] localhost kernel: KERNEL supported cpus:
+[    0.000000] localhost kernel:   Intel GenuineIntel
+[    0.000000] localhost kernel:   AMD AuthenticAMD
+[    0.000000] localhost kernel:   Hygon HygonGenuine
+[    0.000000] localhost kernel:   Centaur CentaurHauls
+[    0.000000] localhost kernel:   zhaoxin   Shanghai  
+[    0.000000] localhost kernel: BIOS-provided physical RAM map:
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000bffd9fff] usable
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x00000000bffda000-0x00000000bfffffff] reserved
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable
+[    0.000000] localhost kernel: BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+[    0.000000] localhost kernel: NX (Execute Disable) protection: active
+[    0.000000] localhost kernel: APIC: Static calls initialized
+[    0.000000] localhost kernel: SMBIOS 2.8 present.
+[    0.000000] localhost kernel: DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org 04/01/2014
+[    0.000000] localhost kernel: Hypervisor detected: KVM
+[    0.000000] localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000001] localhost kernel: kvm-clock: using sched offset of 625167819860 cycles
+[    0.000008] localhost kernel: clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000017] localhost kernel: tsc: Detected 3399.998 MHz processor
+[    0.001216] localhost kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.001221] localhost kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.105886] localhost kernel: AGP: No AGP bridge found
+[    0.106823] localhost kernel: last_pfn = 0x140000 max_arch_pfn = 0x400000000
+[    0.106886] localhost kernel: MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+[    0.106892] localhost kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.106973] localhost kernel: last_pfn = 0xbffda max_arch_pfn = 0x400000000
+[    0.109031] localhost kernel: found SMP MP-table at [mem 0x000f5490-0x000f549f]
+[    0.109302] localhost kernel: RAMDISK: [mem 0x2fccd000-0x33e5dfff]
+[    0.109859] localhost kernel: ACPI: Early table checksum verification disabled
+[    0.109864] localhost kernel: ACPI: RSDP 0x00000000000F5290 000014 (v00 BOCHS )
+[    0.109870] localhost kernel: ACPI: RSDT 0x00000000BFFE3B52 000034 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.109878] localhost kernel: ACPI: FACP 0x00000000BFFE396C 000074 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.109886] localhost kernel: ACPI: DSDT 0x00000000BFFDF040 00492C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.109894] localhost kernel: ACPI: FACS 0x00000000BFFDF000 000040
+[    0.109899] localhost kernel: ACPI: APIC 0x00000000BFFE39E0 000080 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.109906] localhost kernel: ACPI: SSDT 0x00000000BFFE3A60 0000CA (v01 BOCHS  VMGENID  00000001 BXPC 00000001)
+[    0.109913] localhost kernel: ACPI: WAET 0x00000000BFFE3B2A 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.109918] localhost kernel: ACPI: Reserving FACP table memory at [mem 0xbffe396c-0xbffe39df]
+[    0.109920] localhost kernel: ACPI: Reserving DSDT table memory at [mem 0xbffdf040-0xbffe396b]
+[    0.109922] localhost kernel: ACPI: Reserving FACS table memory at [mem 0xbffdf000-0xbffdf03f]
+[    0.109924] localhost kernel: ACPI: Reserving APIC table memory at [mem 0xbffe39e0-0xbffe3a5f]
+[    0.109925] localhost kernel: ACPI: Reserving SSDT table memory at [mem 0xbffe3a60-0xbffe3b29]
+[    0.109926] localhost kernel: ACPI: Reserving WAET table memory at [mem 0xbffe3b2a-0xbffe3b51]
+[    0.110480] localhost kernel: No NUMA configuration found
+[    0.110483] localhost kernel: Faking a node at [mem 0x0000000000000000-0x000000013fffffff]
+[    0.110493] localhost kernel: NODE_DATA(0) allocated [mem 0x13ffd2000-0x13fffcfff]
+[    0.110952] localhost kernel: Zone ranges:
+[    0.110954] localhost kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.110956] localhost kernel:   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.110959] localhost kernel:   Normal   [mem 0x0000000100000000-0x000000013fffffff]
+[    0.110961] localhost kernel:   Device   empty
+[    0.110962] localhost kernel: Movable zone start for each node
+[    0.110965] localhost kernel: Early memory node ranges
+[    0.110966] localhost kernel:   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.110968] localhost kernel:   node   0: [mem 0x0000000000100000-0x00000000bffd9fff]
+[    0.110970] localhost kernel:   node   0: [mem 0x0000000100000000-0x000000013fffffff]
+[    0.110973] localhost kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000013fffffff]
+[    0.110984] localhost kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.111012] localhost kernel: On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.119666] localhost kernel: On node 0, zone Normal: 38 pages in unavailable ranges
+[    0.121848] localhost kernel: ACPI: PM-Timer IO Port: 0x608
+[    0.121882] localhost kernel: ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.121939] localhost kernel: IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.121945] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.121949] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.121952] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.121955] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.121957] localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.121964] localhost kernel: ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.121969] localhost kernel: smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[    0.122024] localhost kernel: kvm-guest: APIC: eoi() replaced with kvm_guest_apic_eoi_write()
+[    0.122062] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.122065] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.122068] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.122069] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.122071] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xbffda000-0xbfffffff]
+[    0.122072] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xc0000000-0xfeffbfff]
+[    0.122075] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xfeffc000-0xfeffffff]
+[    0.122076] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xff000000-0xfffbffff]
+[    0.122077] localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[    0.122083] localhost kernel: [mem 0xc0000000-0xfeffbfff] available for PCI devices
+[    0.122087] localhost kernel: Booting paravirtualized kernel on KVM
+[    0.122097] localhost kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.122135] localhost kernel: setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+[    0.125593] localhost kernel: percpu: Embedded 86 pages/cpu s229376 r8192 d114688 u1048576
+[    0.125604] localhost kernel: pcpu-alloc: s229376 r8192 d114688 u1048576 alloc=1*2097152
+[    0.125609] localhost kernel: pcpu-alloc: [0] 0 1 
+[    0.125680] localhost kernel: kvm-guest: PV spinlocks enabled
+[    0.125688] localhost kernel: PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.125694] localhost kernel: Kernel command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+[    0.126438] localhost kernel: Unknown kernel command line parameters "BOOT_IMAGE=/vmlinuz-6.8.0-55-generic", will be passed to user space.
+[    0.128666] localhost kernel: Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.129707] localhost kernel: Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.129822] localhost kernel: Fallback order for Node 0: 0 
+[    0.129834] localhost kernel: Built 1 zonelists, mobility grouping on.  Total pages: 1031898
+[    0.129838] localhost kernel: Policy zone: Normal
+[    0.129851] localhost kernel: mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    0.129858] localhost kernel: AGP: Checking aperture...
+[    0.237558] localhost kernel: AGP: No AGP bridge found
+[    0.238480] localhost kernel: software IO TLB: area num 2.
+[    0.268007] localhost kernel: Memory: 3933488K/4193760K available (22528K kernel code, 4443K rwdata, 14344K rodata, 4988K init, 4716K bss, 260012K reserved, 0K cma-reserved)
+[    0.293345] localhost kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.293683] localhost kernel: ftrace: allocating 58006 entries in 227 pages
+[    0.317679] localhost kernel: ftrace: allocated 227 pages with 5 groups
+[    0.319712] localhost kernel: Dynamic Preempt: voluntary
+[    0.320101] localhost kernel: rcu: Preemptible hierarchical RCU implementation.
+[    0.320107] localhost kernel: rcu:         RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+[    0.320111] localhost kernel:         Trampoline variant of Tasks RCU enabled.
+[    0.320113] localhost kernel:         Rude variant of Tasks RCU enabled.
+[    0.320113] localhost kernel:         Tracing variant of Tasks RCU enabled.
+[    0.320115] localhost kernel: rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.320117] localhost kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.324542] localhost kernel: NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+[    0.324925] localhost kernel: rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.325076] localhost kernel: Console: colour dummy device 80x25
+[    0.325084] localhost kernel: printk: legacy console [tty0] enabled
+[    0.325440] localhost kernel: ACPI: Core revision 20230628
+[    0.325848] localhost kernel: APIC: Switch to symmetric I/O mode setup
+[    0.326117] localhost kernel: x2apic enabled
+[    0.326478] localhost kernel: APIC: Switched APIC routing to: physical x2apic
+[    0.328080] localhost kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.328129] localhost kernel: tsc: Marking TSC unstable due to TSCs unsynchronized
+[    0.328151] localhost kernel: Calibrating delay loop (skipped) preset value.. 6799.99 BogoMIPS (lpj=3399998)
+[    0.328423] localhost kernel: process: using AMD E400 aware idle routine
+[    0.328435] localhost kernel: Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+[    0.328438] localhost kernel: Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+[    0.328448] localhost kernel: Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.328454] localhost kernel: Spectre V2 : Mitigation: Retpolines
+[    0.328457] localhost kernel: Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.328460] localhost kernel: Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+[    0.328475] localhost kernel: x86/fpu: x87 FPU will use FXSAVE
+[    0.374605] localhost kernel: Freeing SMP alternatives memory: 48K
+[    0.374647] localhost kernel: pid_max: default: 32768 minimum: 301
+[    0.375288] localhost kernel: LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,integrity
+[    0.375469] localhost kernel: landlock: Up and running.
+[    0.375471] localhost kernel: Yama: becoming mindful.
+[    0.375622] localhost kernel: AppArmor: AppArmor initialized
+[    0.375881] localhost kernel: Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.375930] localhost kernel: Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.479493] localhost kernel: smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (family: 0xf, model: 0x6b, stepping: 0x1)
+[    0.480105] localhost kernel: RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.480136] localhost kernel: RCU Tasks Rude: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.480136] localhost kernel: RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.480136] localhost kernel: Performance Events: PMU not available due to virtualization, using software events only.
+[    0.480136] localhost kernel: signal: max sigframe size: 1440
+[    0.480136] localhost kernel: rcu: Hierarchical SRCU implementation.
+[    0.480136] localhost kernel: rcu:         Max phase no-delay instances is 400.
+[    0.480634] localhost kernel: NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.480720] localhost kernel: smp: Bringing up secondary CPUs ...
+[    0.481002] localhost kernel: smpboot: x86: Booting SMP configuration:
+[    0.481006] localhost kernel: .... node  #0, CPUs:      #1
+[    0.483284] localhost kernel: smp: Brought up 1 node, 2 CPUs
+[    0.483326] localhost kernel: smpboot: Max logical packages: 1
+[    0.483332] localhost kernel: smpboot: Total of 2 processors activated (13599.99 BogoMIPS)
+[    0.486505] localhost kernel: devtmpfs: initialized
+[    0.487372] localhost kernel: x86/mm: Memory block size: 128MB
+[    0.488478] localhost kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.488559] localhost kernel: futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.489350] localhost kernel: pinctrl core: initialized pinctrl subsystem
+[    0.489708] localhost kernel: PM: RTC time: 08:10:14, date: 2026-10-14
+[    0.491766] localhost kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.492147] localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
+[    0.492341] localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.492483] localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.492517] localhost kernel: audit: initializing netlink subsys (disabled)
+[    0.493261] localhost kernel: thermal_sys: Registered thermal governor 'fair_share'
+[    0.493265] localhost kernel: thermal_sys: Registered thermal governor 'bang_bang'
+[    0.493273] localhost kernel: thermal_sys: Registered thermal governor 'step_wise'
+[    0.493276] localhost kernel: thermal_sys: Registered thermal governor 'user_space'
+[    0.493279] localhost kernel: thermal_sys: Registered thermal governor 'power_allocator'
+[    0.493299] localhost kernel: EISA bus registered
+[    0.493351] localhost kernel: audit: type=2000 audit(1791965414.298:1): state=initialized audit_enabled=0 res=1
+[    0.493351] localhost kernel: cpuidle: using governor ladder
+[    0.493351] localhost kernel: cpuidle: using governor menu
+[    0.493599] localhost kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.494504] localhost kernel: PCI: Using configuration type 1 for base access
+[    0.494932] localhost kernel: kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    0.501273] localhost kernel: HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.501290] localhost kernel: HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.502242] localhost kernel: fbcon: Taking over console
+[    0.502305] localhost kernel: ACPI: Added _OSI(Module Device)
+[    0.502308] localhost kernel: ACPI: Added _OSI(Processor Device)
+[    0.502311] localhost kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.502313] localhost kernel: ACPI: Added _OSI(Processor Aggregator Device)
+[    0.504385] localhost kernel: ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.519336] localhost kernel: ACPI: _OSC evaluation for CPUs failed, trying _PDC
+[    0.519561] localhost kernel: ACPI: Interpreter enabled
+[    0.519576] localhost kernel: ACPI: PM: (supports S0 S5)
+[    0.519578] localhost kernel: ACPI: Using IOAPIC for interrupt routing
+[    0.519859] localhost kernel: PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.519863] localhost kernel: PCI: Using E820 reservations for host bridge windows
+[    0.520066] localhost kernel: ACPI: Enabled 3 GPEs in block 00 to 0F
+[    0.525561] localhost kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.525570] localhost kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+[    0.525574] localhost kernel: acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.525586] localhost kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+[    0.526119] localhost kernel: acpiphp: Slot [3] registered
+[    0.526166] localhost kernel: acpiphp: Slot [8] registered
+[    0.526195] localhost kernel: acpiphp: Slot [18] registered
+[    0.526261] localhost kernel: acpiphp: Slot [4] registered
+[    0.526287] localhost kernel: acpiphp: Slot [6] registered
+[    0.526311] localhost kernel: acpiphp: Slot [7] registered
+[    0.526336] localhost kernel: acpiphp: Slot [9] registered
+[    0.526361] localhost kernel: acpiphp: Slot [10] registered
+[    0.526386] localhost kernel: acpiphp: Slot [11] registered
+[    0.526413] localhost kernel: acpiphp: Slot [12] registered
+[    0.526438] localhost kernel: acpiphp: Slot [13] registered
+[    0.526463] localhost kernel: acpiphp: Slot [14] registered
+[    0.526487] localhost kernel: acpiphp: Slot [15] registered
+[    0.526512] localhost kernel: acpiphp: Slot [16] registered
+[    0.526536] localhost kernel: acpiphp: Slot [17] registered
+[    0.526562] localhost kernel: acpiphp: Slot [19] registered
+[    0.526589] localhost kernel: acpiphp: Slot [20] registered
+[    0.526615] localhost kernel: acpiphp: Slot [21] registered
+[    0.526640] localhost kernel: acpiphp: Slot [22] registered
+[    0.526665] localhost kernel: acpiphp: Slot [23] registered
+[    0.526690] localhost kernel: acpiphp: Slot [24] registered
+[    0.526714] localhost kernel: acpiphp: Slot [25] registered
+[    0.526739] localhost kernel: acpiphp: Slot [26] registered
+[    0.526766] localhost kernel: acpiphp: Slot [27] registered
+[    0.526794] localhost kernel: acpiphp: Slot [28] registered
+[    0.526831] localhost kernel: acpiphp: Slot [29] registered
+[    0.526851] localhost kernel: PCI host bridge to bus 0000:00
+[    0.526855] localhost kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.526859] localhost kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.526861] localhost kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.526865] localhost kernel: pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    0.526868] localhost kernel: pci_bus 0000:00: root bus resource [mem 0xc000000000-0xc0a000bfff window]
+[    0.526871] localhost kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.526943] localhost kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+[    0.527677] localhost kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+[    0.528644] localhost kernel: pci 0000:00:01.1: [8086:7010] type 00 class 0x010180 conventional PCI endpoint
+[    0.532542] localhost kernel: pci 0000:00:01.1: BAR 4 [io  0xf0e0-0xf0ef]
+[    0.534185] localhost kernel: pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+[    0.534190] localhost kernel: pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+[    0.534193] localhost kernel: pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+[    0.534196] localhost kernel: pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+[    0.534429] localhost kernel: pci 0000:00:01.2: [8086:7020] type 00 class 0x0c0300 conventional PCI endpoint
+[    0.538549] localhost kernel: pci 0000:00:01.2: BAR 4 [io  0xf0c0-0xf0df]
+[    0.541794] localhost kernel: pci 0000:00:01.3: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+[    0.542566] localhost kernel: pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+[    0.542585] localhost kernel: pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+[    0.542934] localhost kernel: pci 0000:00:02.0: [1234:1111] type 00 class 0x030000 conventional PCI endpoint
+[    0.545150] localhost kernel: pci 0000:00:02.0: BAR 0 [mem 0xfd000000-0xfdffffff pref]
+[    0.549316] localhost kernel: pci 0000:00:02.0: BAR 2 [mem 0xfea50000-0xfea50fff]
+[    0.557149] localhost kernel: pci 0000:00:02.0: ROM [mem 0xfea40000-0xfea4ffff pref]
+[    0.557259] localhost kernel: pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.558166] localhost kernel: pci 0000:00:03.0: [1af4:1002] type 00 class 0x00ff00 conventional PCI endpoint
+[    0.559138] localhost kernel: pci 0000:00:03.0: BAR 0 [io  0xf000-0xf03f]
+[    0.560912] localhost kernel: pci 0000:00:03.0: BAR 1 [mem 0xfea51000-0xfea51fff]
+[    0.567139] localhost kernel: pci 0000:00:03.0: BAR 4 [mem 0xc0a0000000-0xc0a0003fff 64bit pref]
+[    0.573176] localhost kernel: pci 0000:00:05.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+[    0.576139] localhost kernel: pci 0000:00:05.0: BAR 0 [mem 0xc000000000-0xc0000000ff 64bit]
+[    0.578151] localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+[    0.578193] localhost kernel: pci 0000:00:05.0:   bridge window [io  0xe000-0xefff]
+[    0.578222] localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xfe800000-0xfe9fffff]
+[    0.579580] localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xc080000000-0xc09fffffff 64bit pref]
+[    0.581559] localhost kernel: pci 0000:00:08.0: [1af4:1003] type 00 class 0x078000 conventional PCI endpoint
+[    0.582710] localhost kernel: pci 0000:00:08.0: BAR 0 [io  0xf040-0xf07f]
+[    0.584139] localhost kernel: pci 0000:00:08.0: BAR 1 [mem 0xfea52000-0xfea52fff]
+[    0.590138] localhost kernel: pci 0000:00:08.0: BAR 4 [mem 0xc0a0004000-0xc0a0007fff 64bit pref]
+[    0.597788] localhost kernel: pci 0000:00:12.0: [1af4:1000] type 00 class 0x020000 conventional PCI endpoint
+[    0.599138] localhost kernel: pci 0000:00:12.0: BAR 0 [io  0xf080-0xf0bf]
+[    0.601138] localhost kernel: pci 0000:00:12.0: BAR 1 [mem 0xfea53000-0xfea53fff]
+[    0.608139] localhost kernel: pci 0000:00:12.0: BAR 4 [mem 0xc0a0008000-0xc0a000bfff 64bit pref]
+[    0.610139] localhost kernel: pci 0000:00:12.0: ROM [mem 0xfea00000-0xfea3ffff pref]
+[    0.616461] localhost kernel: pci 0000:00:1e.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+[    0.619139] localhost kernel: pci 0000:00:1e.0: BAR 0 [mem 0xc000001000-0xc0000010ff 64bit]
+[    0.621157] localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+[    0.621200] localhost kernel: pci 0000:00:1e.0:   bridge window [io  0xd000-0xdfff]
+[    0.621230] localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xfe600000-0xfe7fffff]
+[    0.622190] localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xc060000000-0xc07fffffff 64bit pref]
+[    0.623202] localhost kernel: pci 0000:00:1f.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+[    0.625139] localhost kernel: pci 0000:00:1f.0: BAR 0 [mem 0xc000002000-0xc0000020ff 64bit]
+[    0.627152] localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+[    0.627195] localhost kernel: pci 0000:00:1f.0:   bridge window [io  0xc000-0xcfff]
+[    0.627225] localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xfe400000-0xfe5fffff]
+[    0.628190] localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xc040000000-0xc05fffffff 64bit pref]
+[    0.629876] localhost kernel: pci_bus 0000:01: extended config space not accessible
+[    0.630117] localhost kernel: acpiphp: Slot [1-2] registered
+[    0.630153] localhost kernel: acpiphp: Slot [0] registered
+[    0.630182] localhost kernel: acpiphp: Slot [2] registered
+[    0.630215] localhost kernel: acpiphp: Slot [3-2] registered
+[    0.630259] localhost kernel: acpiphp: Slot [4-2] registered
+[    0.630287] localhost kernel: acpiphp: Slot [5] registered
+[    0.630317] localhost kernel: acpiphp: Slot [6-2] registered
+[    0.630347] localhost kernel: acpiphp: Slot [7-2] registered
+[    0.630380] localhost kernel: acpiphp: Slot [8-2] registered
+[    0.630409] localhost kernel: acpiphp: Slot [9-2] registered
+[    0.630438] localhost kernel: acpiphp: Slot [10-2] registered
+[    0.630468] localhost kernel: acpiphp: Slot [11-2] registered
+[    0.630498] localhost kernel: acpiphp: Slot [12-2] registered
+[    0.630529] localhost kernel: acpiphp: Slot [13-2] registered
+[    0.631141] localhost kernel: acpiphp: Slot [14-2] registered
+[    0.631178] localhost kernel: acpiphp: Slot [15-2] registered
+[    0.631212] localhost kernel: acpiphp: Slot [16-2] registered
+[    0.631245] localhost kernel: acpiphp: Slot [17-2] registered
+[    0.631279] localhost kernel: acpiphp: Slot [18-2] registered
+[    0.631310] localhost kernel: acpiphp: Slot [19-2] registered
+[    0.631344] localhost kernel: acpiphp: Slot [20-2] registered
+[    0.631375] localhost kernel: acpiphp: Slot [21-2] registered
+[    0.631407] localhost kernel: acpiphp: Slot [22-2] registered
+[    0.631437] localhost kernel: acpiphp: Slot [23-2] registered
+[    0.631465] localhost kernel: acpiphp: Slot [24-2] registered
+[    0.631493] localhost kernel: acpiphp: Slot [25-2] registered
+[    0.631528] localhost kernel: acpiphp: Slot [26-2] registered
+[    0.631559] localhost kernel: acpiphp: Slot [27-2] registered
+[    0.631589] localhost kernel: acpiphp: Slot [28-2] registered
+[    0.631626] localhost kernel: acpiphp: Slot [29-2] registered
+[    0.631654] localhost kernel: acpiphp: Slot [30] registered
+[    0.631681] localhost kernel: acpiphp: Slot [31] registered
+[    0.632179] localhost kernel: pci 0000:01:01.0: [1af4:1004] type 00 class 0x010000 conventional PCI endpoint
+[    0.633777] localhost kernel: pci 0000:01:01.0: BAR 0 [io  0xe000-0xe03f]
+[    0.635139] localhost kernel: pci 0000:01:01.0: BAR 1 [mem 0xfe800000-0xfe800fff]
+[    0.642143] localhost kernel: pci 0000:01:01.0: BAR 4 [mem 0xc080000000-0xc080003fff 64bit pref]
+[    0.656551] localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+[    0.657729] localhost kernel: pci_bus 0000:02: extended config space not accessible
+[    0.658161] localhost kernel: acpiphp: Slot [0-2] registered
+[    0.658203] localhost kernel: acpiphp: Slot [1-3] registered
+[    0.658240] localhost kernel: acpiphp: Slot [2-2] registered
+[    0.658661] localhost kernel: acpiphp: Slot [3-3] registered
+[    0.658695] localhost kernel: acpiphp: Slot [4-3] registered
+[    0.658726] localhost kernel: acpiphp: Slot [5-2] registered
+[    0.658756] localhost kernel: acpiphp: Slot [6-3] registered
+[    0.658786] localhost kernel: acpiphp: Slot [7-3] registered
+[    0.658836] localhost kernel: acpiphp: Slot [8-3] registered
+[    0.658867] localhost kernel: acpiphp: Slot [9-3] registered
+[    0.658899] localhost kernel: acpiphp: Slot [10-3] registered
+[    0.658930] localhost kernel: acpiphp: Slot [11-3] registered
+[    0.658963] localhost kernel: acpiphp: Slot [12-3] registered
+[    0.658996] localhost kernel: acpiphp: Slot [13-3] registered
+[    0.659028] localhost kernel: acpiphp: Slot [14-3] registered
+[    0.659064] localhost kernel: acpiphp: Slot [15-3] registered
+[    0.659099] localhost kernel: acpiphp: Slot [16-3] registered
+[    0.659139] localhost kernel: acpiphp: Slot [17-3] registered
+[    0.659178] localhost kernel: acpiphp: Slot [18-3] registered
+[    0.659208] localhost kernel: acpiphp: Slot [19-3] registered
+[    0.659238] localhost kernel: acpiphp: Slot [20-3] registered
+[    0.659269] localhost kernel: acpiphp: Slot [21-3] registered
+[    0.659304] localhost kernel: acpiphp: Slot [22-3] registered
+[    0.659335] localhost kernel: acpiphp: Slot [23-3] registered
+[    0.659365] localhost kernel: acpiphp: Slot [24-3] registered
+[    0.659397] localhost kernel: acpiphp: Slot [25-3] registered
+[    0.659429] localhost kernel: acpiphp: Slot [26-3] registered
+[    0.659466] localhost kernel: acpiphp: Slot [27-3] registered
+[    0.659497] localhost kernel: acpiphp: Slot [28-3] registered
+[    0.659533] localhost kernel: acpiphp: Slot [29-3] registered
+[    0.659563] localhost kernel: acpiphp: Slot [30-2] registered
+[    0.659594] localhost kernel: acpiphp: Slot [31-2] registered
+[    0.671408] localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+[    0.673405] localhost kernel: pci_bus 0000:03: extended config space not accessible
+[    0.673837] localhost kernel: acpiphp: Slot [0-3] registered
+[    0.673871] localhost kernel: acpiphp: Slot [1-4] registered
+[    0.673905] localhost kernel: acpiphp: Slot [2-3] registered
+[    0.674168] localhost kernel: acpiphp: Slot [3-4] registered
+[    0.674201] localhost kernel: acpiphp: Slot [4-4] registered
+[    0.674238] localhost kernel: acpiphp: Slot [5-3] registered
+[    0.674274] localhost kernel: acpiphp: Slot [6-4] registered
+[    0.674307] localhost kernel: acpiphp: Slot [7-4] registered
+[    0.674343] localhost kernel: acpiphp: Slot [8-4] registered
+[    0.674379] localhost kernel: acpiphp: Slot [9-4] registered
+[    0.674413] localhost kernel: acpiphp: Slot [10-4] registered
+[    0.674446] localhost kernel: acpiphp: Slot [11-4] registered
+[    0.674473] localhost kernel: acpiphp: Slot [12-4] registered
+[    0.674498] localhost kernel: acpiphp: Slot [13-4] registered
+[    0.674523] localhost kernel: acpiphp: Slot [14-4] registered
+[    0.674549] localhost kernel: acpiphp: Slot [15-4] registered
+[    0.674576] localhost kernel: acpiphp: Slot [16-4] registered
+[    0.674601] localhost kernel: acpiphp: Slot [17-4] registered
+[    0.674629] localhost kernel: acpiphp: Slot [18-4] registered
+[    0.674654] localhost kernel: acpiphp: Slot [19-4] registered
+[    0.674679] localhost kernel: acpiphp: Slot [20-4] registered
+[    0.674703] localhost kernel: acpiphp: Slot [21-4] registered
+[    0.674728] localhost kernel: acpiphp: Slot [22-4] registered
+[    0.674755] localhost kernel: acpiphp: Slot [23-4] registered
+[    0.674781] localhost kernel: acpiphp: Slot [24-4] registered
+[    0.674807] localhost kernel: acpiphp: Slot [25-4] registered
+[    0.674848] localhost kernel: acpiphp: Slot [26-4] registered
+[    0.674874] localhost kernel: acpiphp: Slot [27-4] registered
+[    0.674898] localhost kernel: acpiphp: Slot [28-4] registered
+[    0.674926] localhost kernel: acpiphp: Slot [29-4] registered
+[    0.674953] localhost kernel: acpiphp: Slot [30-3] registered
+[    0.674977] localhost kernel: acpiphp: Slot [31-3] registered
+[    0.686488] localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+[    0.690267] localhost kernel: ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    0.690460] localhost kernel: ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    0.690607] localhost kernel: ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    0.690751] localhost kernel: ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    0.690836] localhost kernel: ACPI: PCI: Interrupt link LNKS configured for IRQ 9
+[    0.691405] localhost kernel: iommu: Default domain type: Translated
+[    0.691405] localhost kernel: iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.691511] localhost kernel: SCSI subsystem initialized
+[    0.691624] localhost kernel: libata version 3.00 loaded.
+[    0.691653] localhost kernel: ACPI: bus type USB registered
+[    0.691670] localhost kernel: usbcore: registered new interface driver usbfs
+[    0.691683] localhost kernel: usbcore: registered new interface driver hub
+[    0.691693] localhost kernel: usbcore: registered new device driver usb
+[    0.691726] localhost kernel: pps_core: LinuxPPS API ver. 1 registered
+[    0.691729] localhost kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.691735] localhost kernel: PTP clock support registered
+[    0.691847] localhost kernel: EDAC MC: Ver: 3.0.0
+[    0.691847] localhost kernel: NetLabel: Initializing
+[    0.691847] localhost kernel: NetLabel:  domain hash size = 128
+[    0.691847] localhost kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.691847] localhost kernel: NetLabel:  unlabeled traffic allowed by default
+[    0.691874] localhost kernel: mctp: management component transport protocol core
+[    0.691878] localhost kernel: NET: Registered PF_MCTP protocol family
+[    0.691894] localhost kernel: PCI: Using ACPI for IRQ routing
+[    0.691898] localhost kernel: PCI: pci_cache_line_size set to 64 bytes
+[    0.692242] localhost kernel: e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.692246] localhost kernel: e820: reserve RAM buffer [mem 0xbffda000-0xbfffffff]
+[    0.693262] localhost kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    0.693268] localhost kernel: pci 0000:00:02.0: vgaarb: bridge control possible
+[    0.693271] localhost kernel: pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.693277] localhost kernel: vgaarb: loaded
+[    0.693539] localhost kernel: clocksource: Switched to clocksource kvm-clock
+[    0.694021] localhost kernel: VFS: Disk quotas dquot_6.6.0
+[    0.694061] localhost kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.694261] localhost kernel: AppArmor: AppArmor Filesystem Enabled
+[    0.694284] localhost kernel: pnp: PnP ACPI init
+[    0.694443] localhost kernel: pnp 00:02: [dma 2]
+[    0.694805] localhost kernel: pnp: PnP ACPI: found 4 devices
+[    0.708436] localhost kernel: clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.708708] localhost kernel: NET: Registered PF_INET protocol family
+[    0.709082] localhost kernel: IP idents hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.726509] localhost kernel: tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    0.726631] localhost kernel: Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.726742] localhost kernel: TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.727025] localhost kernel: TCP bind hash table entries: 32768 (order: 8, 1048576 bytes, linear)
+[    0.727094] localhost kernel: TCP: Hash tables configured (established 32768 bind 32768)
+[    0.727257] localhost kernel: MPTCP token hash table entries: 4096 (order: 4, 98304 bytes, linear)
+[    0.727295] localhost kernel: UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.727313] localhost kernel: UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.727421] localhost kernel: NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.727436] localhost kernel: NET: Registered PF_XDP protocol family
+[    0.727459] localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+[    0.727493] localhost kernel: pci 0000:00:05.0:   bridge window [io  0xe000-0xefff]
+[    0.729231] localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xfe800000-0xfe9fffff]
+[    0.730789] localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xc080000000-0xc09fffffff 64bit pref]
+[    0.733092] localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+[    0.733115] localhost kernel: pci 0000:00:1e.0:   bridge window [io  0xd000-0xdfff]
+[    0.734641] localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xfe600000-0xfe7fffff]
+[    0.735683] localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xc060000000-0xc07fffffff 64bit pref]
+[    0.737592] localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+[    0.737616] localhost kernel: pci 0000:00:1f.0:   bridge window [io  0xc000-0xcfff]
+[    0.742180] localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xfe400000-0xfe5fffff]
+[    0.743070] localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xc040000000-0xc05fffffff 64bit pref]
+[    0.744928] localhost kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.744936] localhost kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.744940] localhost kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.744944] localhost kernel: pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+[    0.744948] localhost kernel: pci_bus 0000:00: resource 8 [mem 0xc000000000-0xc0a000bfff window]
+[    0.744953] localhost kernel: pci_bus 0000:01: resource 0 [io  0xe000-0xefff]
+[    0.744956] localhost kernel: pci_bus 0000:01: resource 1 [mem 0xfe800000-0xfe9fffff]
+[    0.744959] localhost kernel: pci_bus 0000:01: resource 2 [mem 0xc080000000-0xc09fffffff 64bit pref]
+[    0.744964] localhost kernel: pci_bus 0000:02: resource 0 [io  0xd000-0xdfff]
+[    0.744967] localhost kernel: pci_bus 0000:02: resource 1 [mem 0xfe600000-0xfe7fffff]
+[    0.744970] localhost kernel: pci_bus 0000:02: resource 2 [mem 0xc060000000-0xc07fffffff 64bit pref]
+[    0.744974] localhost kernel: pci_bus 0000:03: resource 0 [io  0xc000-0xcfff]
+[    0.744977] localhost kernel: pci_bus 0000:03: resource 1 [mem 0xfe400000-0xfe5fffff]
+[    0.744980] localhost kernel: pci_bus 0000:03: resource 2 [mem 0xc040000000-0xc05fffffff 64bit pref]
+[    0.745150] localhost kernel: pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    0.745173] localhost kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.747768] localhost kernel: ACPI: \_SB_.LNKD: Enabled at IRQ 11
+[    0.750415] localhost kernel: PCI: CLS 0 bytes, default 64
+[    0.750674] localhost kernel: PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.750680] localhost kernel: software IO TLB: mapped [mem 0x00000000bbfda000-0x00000000bffda000] (64MB)
+[    0.751638] localhost kernel: Initialise system trusted keyrings
+[    0.751659] localhost kernel: Trying to unpack rootfs image as initramfs...
+[    0.751663] localhost kernel: Key type blacklist registered
+[    0.751802] localhost kernel: workingset: timestamp_bits=36 max_order=20 bucket_order=0
+[    0.751828] localhost kernel: zbud: loaded
+[    0.753127] localhost kernel: squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.753604] localhost kernel: fuse: init (API version 7.39)
+[    0.753936] localhost kernel: integrity: Platform Keyring initialized
+[    0.753946] localhost kernel: integrity: Machine keyring initialized
+[    0.769484] localhost kernel: Key type asymmetric registered
+[    0.769515] localhost kernel: Asymmetric key parser 'x509' registered
+[    0.769629] localhost kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    0.769885] localhost kernel: io scheduler mq-deadline registered
+[    0.772511] localhost kernel: shpchp 0000:00:05.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.S28_)
+[    0.772536] localhost kernel: shpchp 0000:00:05.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+[    0.772549] localhost kernel: shpchp 0000:00:05.0: Cannot get control of SHPC hotplug
+[    0.773073] localhost kernel: shpchp 0000:00:1e.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.SF0_)
+[    0.773091] localhost kernel: shpchp 0000:00:1e.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+[    0.773098] localhost kernel: shpchp 0000:00:1e.0: Cannot get control of SHPC hotplug
+[    0.773951] localhost kernel: shpchp 0000:00:1f.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.SF8_)
+[    0.773970] localhost kernel: shpchp 0000:00:1f.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+[    0.773976] localhost kernel: shpchp 0000:00:1f.0: Cannot get control of SHPC hotplug
+[    0.773995] localhost kernel: shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    0.774661] localhost kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.775190] localhost kernel: ACPI: button: Power Button [PWRF]
+[    0.777990] localhost kernel: ACPI: \_SB_.LNKC: Enabled at IRQ 10
+[    0.803199] localhost kernel: ACPI: \_SB_.LNKB: Enabled at IRQ 10
+[    0.813213] localhost kernel: ACPI: \_SB_.LNKA: Enabled at IRQ 11
+[    0.836705] localhost kernel: Free page reporting enabled
+[    0.837442] localhost kernel: Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    0.882617] localhost kernel: Linux agpgart interface v0.103
+[    0.885928] localhost kernel: Freeing initrd memory: 67140K
+[    0.888243] localhost kernel: loop: module loaded
+[    0.889991] localhost kernel: virtio_scsi virtio3: 2/0/0 default/read/poll queues
+[    0.891642] localhost kernel: scsi host0: Virtio SCSI HBA
+[    0.895928] localhost kernel: ata_piix 0000:00:01.1: version 2.13
+[    0.896572] localhost kernel: scsi 0:0:0:0: Direct-Access     QEMU     QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[    0.898439] localhost kernel: scsi host1: ata_piix
+[    0.898573] localhost kernel: scsi host2: ata_piix
+[    0.898609] localhost kernel: ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xf0e0 irq 14 lpm-pol 0
+[    0.898613] localhost kernel: ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xf0e8 irq 15 lpm-pol 0
+[    0.898672] localhost kernel: ACPI: bus type drm_connector registered
+[    0.899197] localhost kernel: tun: Universal TUN/TAP device driver, 1.6
+[    0.911762] localhost kernel: PPP generic driver version 2.4.2
+[    0.913402] localhost kernel: uhci_hcd 0000:00:01.2: UHCI Host Controller
+[    0.913414] localhost kernel: uhci_hcd 0000:00:01.2: new USB bus registered, assigned bus number 1
+[    0.913440] localhost kernel: uhci_hcd 0000:00:01.2: detected 2 ports
+[    0.913588] localhost kernel: uhci_hcd 0000:00:01.2: irq 11, io port 0x0000f0c0
+[    0.913725] localhost kernel: usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 6.08
+[    0.913730] localhost kernel: usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.913734] localhost kernel: usb usb1: Product: UHCI Host Controller
+[    0.913736] localhost kernel: usb usb1: Manufacturer: Linux 6.8.0-55-generic uhci_hcd
+[    0.913739] localhost kernel: usb usb1: SerialNumber: 0000:00:01.2
+[    0.913831] localhost kernel: hub 1-0:1.0: USB hub found
+[    0.913838] localhost kernel: hub 1-0:1.0: 2 ports detected
+[    0.914021] localhost kernel: i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    0.916851] localhost kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+[    0.916863] localhost kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+[    0.917068] localhost kernel: mousedev: PS/2 mouse device common for all mice
+[    0.917484] localhost kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    0.917545] localhost kernel: rtc_cmos 00:03: RTC can wake from S4
+[    0.918566] localhost kernel: scsi 0:0:0:0: Attached scsi generic sg0 type 0
+[    0.918746] localhost kernel: sd 0:0:0:0: Power-on or device reset occurred
+[    0.918807] localhost kernel: rtc_cmos 00:03: registered as rtc0
+[    0.918982] localhost kernel: sd 0:0:0:0: [sda] 67108864 512-byte logical blocks: (34.4 GB/32.0 GiB)
+[    0.919032] localhost kernel: sd 0:0:0:0: [sda] Write Protect is off
+[    0.919037] localhost kernel: sd 0:0:0:0: [sda] Mode Sense: 63 00 10 08
+[    0.919056] localhost kernel: rtc_cmos 00:03: setting system clock to 2026-10-14T08:10:14 UTC (1791965414)
+[    0.919154] localhost kernel: rtc_cmos 00:03: alarms up to one day, y3k, 242 bytes nvram
+[    0.919166] localhost kernel: i2c_dev: i2c /dev entries driver
+[    0.919193] localhost kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    0.919251] localhost kernel: device-mapper: uevent: version 1.0.3
+[    0.919505] localhost kernel: sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[    0.919519] localhost kernel: device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+[    0.919551] localhost kernel: platform eisa.0: Probing EISA bus 0
+[    0.919556] localhost kernel: platform eisa.0: EISA: Cannot allocate resource for mainboard
+[    0.919559] localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 1
+[    0.919562] localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 2
+[    0.919564] localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 3
+[    0.919567] localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 4
+[    0.919569] localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 5
+[    0.919572] localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 6
+[    0.919574] localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 7
+[    0.919577] localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 8
+[    0.919579] localhost kernel: platform eisa.0: EISA: Detected 0 cards
+[    0.919583] localhost kernel: amd_pstate: the _CPC object is not present in SBIOS or ACPI disabled
+[    0.919635] localhost kernel: ledtrig-cpu: registered to indicate activity on CPUs
+[    0.920282] localhost kernel: [drm] Initialized simpledrm 1.0.0 20200625 for simple-framebuffer.0 on minor 0
+[    0.922716] localhost kernel: Console: switching to colour frame buffer device 100x37
+[    0.924493] localhost kernel: simple-framebuffer simple-framebuffer.0: [drm] fb0: simpledrmdrmfb frame buffer device
+[    0.925311] localhost kernel: drop_monitor: Initializing network drop monitor service
+[    0.925590] localhost kernel: NET: Registered PF_INET6 protocol family
+[    0.931576] localhost kernel:  sda: sda1 sda2 sda3
+[    0.931844] localhost kernel: sd 0:0:0:0: [sda] Attached SCSI disk
+[    0.948720] localhost kernel: Segment Routing with IPv6
+[    0.948924] localhost kernel: In-situ OAM (IOAM) with IPv6
+[    0.949204] localhost kernel: NET: Registered PF_PACKET protocol family
+[    0.949818] localhost kernel: Key type dns_resolver registered
+[    0.951337] localhost kernel: IPI shorthand broadcast: enabled
+[    0.954564] localhost kernel: sched_clock: Marking stable (952115435, 2197432)->(984071489, -29758622)
+[    0.969101] localhost kernel: registered taskstats version 1
+[    0.977712] localhost kernel: Loading compiled-in X.509 certificates
+[    0.987180] localhost kernel: Loaded X.509 cert 'Build time autogenerated kernel key: e0bedf6fa049a1e09bd65ebab3904f14cdd5bc68'
+[    0.993907] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+[    1.000808] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+[    1.006682] localhost kernel: blacklist: Loading compiled-in revocation X.509 certificates
+[    1.009718] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+[    1.016750] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+[    1.022819] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+[    1.028789] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+[    1.038650] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+[    1.044951] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+[    1.047172] localhost kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+[    1.058163] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+[    1.067700] localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+[    1.076416] localhost kernel: ata2: found unknown device (class 0)
+[    1.108094] localhost kernel: ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[    1.122768] localhost kernel: Key type .fscrypt registered
+[    1.128123] localhost kernel: Key type fscrypt-provisioning registered
+[    1.129510] localhost kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 8 times, consider switching to WQ_UNBOUND
+[    1.139353] localhost kernel: scsi 2:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+[    1.164129] localhost kernel: usb 1-1: new full-speed USB device number 2 using uhci_hcd
+[    1.186677] localhost kernel: cryptd: max_cpu_qlen set to 1000
+[    1.196280] localhost kernel: sr 2:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[    1.198845] localhost kernel: cdrom: Uniform CD-ROM driver Revision: 3.20
+[    1.210935] localhost kernel: sr 2:0:0:0: Attached scsi CD-ROM sr0
+[    1.213348] localhost kernel: sr 2:0:0:0: Attached scsi generic sg1 type 5
+[    1.222479] localhost kernel: SSE version of gcm_enc/dec engaged.
+[    1.254727] localhost kernel: Key type encrypted registered
+[    1.258985] localhost kernel: AppArmor: AppArmor sha256 policy hashing enabled
+[    1.266404] localhost kernel: ima: No TPM chip found, activating TPM-bypass!
+[    1.271094] localhost kernel: Loading compiled-in module X.509 certificates
+[    1.276371] localhost kernel: Loaded X.509 cert 'Build time autogenerated kernel key: e0bedf6fa049a1e09bd65ebab3904f14cdd5bc68'
+[    1.285941] localhost kernel: ima: Allocated hash algorithm: sha256
+[    1.288262] localhost kernel: ima: No architecture policies found
+[    1.290314] localhost kernel: evm: Initialising EVM extended attributes:
+[    1.291868] localhost kernel: evm: security.selinux
+[    1.296079] localhost kernel: evm: security.SMACK64
+[    1.297172] localhost kernel: evm: security.SMACK64EXEC
+[    1.298212] localhost kernel: evm: security.SMACK64TRANSMUTE
+[    1.299097] localhost kernel: evm: security.SMACK64MMAP
+[    1.300928] localhost kernel: evm: security.apparmor
+[    1.301920] localhost kernel: evm: security.ima
+[    1.302859] localhost kernel: evm: security.capability
+[    1.303921] localhost kernel: evm: HMAC attrs: 0x1
+[    1.308039] localhost kernel: PM:   Magic number: 14:539:169
+[    1.309615] localhost kernel: acpi device:32: hash matches
+[    1.319648] localhost kernel: powernow_k8: Power state transitions not supported
+[    1.322744] localhost kernel: powernow_k8: Power state transitions not supported
+[    1.370651] localhost kernel: RAS: Correctable Errors collector initialized.
+[    1.375149] localhost kernel: clk: Disabling unused clocks
+[    1.406737] localhost kernel: Freeing unused decrypted memory: 2028K
+[    1.416191] localhost kernel: Freeing unused kernel image (initmem) memory: 4988K
+[    1.420911] localhost kernel: Write protecting the kernel read-only data: 38912k
+[    1.431945] localhost kernel: usb 1-1: New USB device found, idVendor=0627, idProduct=0001, bcdDevice= 0.00
+[    1.433501] localhost kernel: usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=10
+[    1.436812] localhost kernel: usb 1-1: Product: QEMU USB Tablet
+[    1.440013] localhost kernel: usb 1-1: Manufacturer: QEMU
+[    1.442707] localhost kernel: Freeing unused kernel image (rodata/data gap) memory: 2040K
+[    1.443127] localhost kernel: usb 1-1: SerialNumber: 28754-0000:00:01.2-1
+[    1.490681] localhost kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    1.494352] localhost kernel: Run /init as init process
+[    1.496367] localhost kernel:   with arguments:
+[    1.496372] localhost kernel:     /init
+[    1.496374] localhost kernel:   with environment:
+[    1.496376] localhost kernel:     HOME=/
+[    1.496377] localhost kernel:     TERM=linux
+[    1.496377] localhost kernel:     BOOT_IMAGE=/vmlinuz-6.8.0-55-generic
+[    1.771717] localhost kernel: virtio_net virtio2 ens18: renamed from eth0
+[    1.790143] localhost kernel: FDC 0 is a S82078B
+[    1.894965] localhost kernel: hid: raw HID events driver (C) Jiri Kosina
+[    1.919134] localhost kernel: input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input4
+[    1.923606] localhost kernel: input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input3
+[    1.954262] localhost kernel: usbcore: registered new interface driver usbhid
+[    1.957295] localhost kernel: usbhid: USB HID core driver
+[    1.974276] localhost kernel: input: QEMU QEMU USB Tablet as /devices/pci0000:00/0000:00:01.2/usb1/1-1/1-1:1.0/0003:0627:0001.0001/input/input5
+[    1.977564] localhost kernel: hid-generic 0003:0627:0001.0001: input,hidraw0: USB HID v0.01 Mouse [QEMU QEMU USB Tablet] on usb-0000:00:01.2-1/input0
+[    2.006693] localhost kernel: Console: switching to colour dummy device 80x25
+[    2.012571] localhost kernel: bochs-drm 0000:00:02.0: vgaarb: deactivate vga console
+[    2.012767] localhost kernel: [drm] Found bochs VGA, ID 0xb0c5.
+[    2.012771] localhost kernel: [drm] Framebuffer size 16384 kB @ 0xfd000000, mmio @ 0xfea50000.
+[    2.018440] localhost kernel: [drm] Found EDID data blob.
+[    2.018631] localhost kernel: [drm] Initialized bochs-drm 1.0.0 20130925 for 0000:00:02.0 on minor 0
+[    2.019488] localhost kernel: fbcon: bochs-drmdrmfb (fb0) is primary device
+[    2.115958] localhost kernel: Console: switching to colour frame buffer device 160x50
+[    2.121284] localhost kernel: bochs-drm 0000:00:02.0: [drm] fb0: bochs-drmdrmfb frame buffer device
+[    2.335227] localhost kernel: random: crng init done
+[    2.595206] localhost kernel: raid6: sse2x4   gen() 17923 MB/s
+[    2.612211] localhost kernel: raid6: sse2x2   gen()  5370 MB/s
+[    2.629207] localhost kernel: raid6: sse2x1   gen()  1226 MB/s
+[    2.629222] localhost kernel: raid6: using algorithm sse2x4 gen() 17923 MB/s
+[    2.646207] localhost kernel: raid6: .... xor() 3419 MB/s, rmw enabled
+[    2.646221] localhost kernel: raid6: using ssse3x2 recovery algorithm
+[    2.648061] localhost kernel: xor: measuring software checksum speed
+[    2.648223] localhost kernel:    prefetch64-sse  : 21618 MB/sec
+[    2.648372] localhost kernel:    generic_sse     : 23095 MB/sec
+[    2.648378] localhost kernel: xor: using function: generic_sse (23095 MB/sec)
+[    2.648937] localhost kernel: async_tx: api initialized (async)
+[    2.735432] localhost kernel: Btrfs loaded, zoned=yes, fsverity=yes
+[    3.408704] localhost kernel: EXT4-fs (dm-0): mounted filesystem 78dfc1ab-05ce-40b9-a2f8-2f3e03168145 ro with ordered data mode. Quota mode: none.
+[    3.532207] localhost kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 16 times, consider switching to WQ_UNBOUND
+[   10.949822] localhost systemd[1]: Inserted module 'autofs4'
+[   12.290171] localhost systemd[1]: systemd 255.4-1ubuntu8.5 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[   12.291695] localhost systemd[1]: Detected virtualization kvm.
+[   12.292212] localhost systemd[1]: Detected architecture x86-64.
+[   12.527736] localhost systemd[1]: No hostname configured, using default hostname.
+[   12.528317] localhost systemd[1]: Hostname set to <localhost>.
+[   19.643905] localhost systemd[1]: Queued start job for default target graphical.target.
+[   19.842383] localhost systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+[   19.843432] localhost systemd[1]: Created slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+[   19.846916] localhost systemd[1]: Created slice user.slice - User and Session Slice.
+[   19.849582] localhost systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[   19.857106] localhost systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+[   19.860501] localhost systemd[1]: Expecting device dev-disk-by\x2duuid-c3f8f018\x2df5f7\x2d4a5d\x2d92a1\x2d12ee87108672.device - /dev/disk/by-uuid/c3f8f018-f5f7-4a5d-92a1-12ee87108672...
+[   19.862085] localhost systemd[1]: Reached target integritysetup.target - Local Integrity Protected Volumes.
+[   19.863952] localhost systemd[1]: Reached target slices.target - Slice Units.
+[   19.866514] localhost systemd[1]: Reached target snapd.mounts-pre.target - Mounting snaps.
+[   19.867638] localhost systemd[1]: Reached target snapd.mounts.target - Mounted snaps.
+[   19.868822] localhost systemd[1]: Reached target veritysetup.target - Local Verity Protected Volumes.
+[   19.870112] localhost systemd[1]: Listening on dm-event.socket - Device-mapper event daemon FIFOs.
+[   19.871486] localhost systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+[   19.872840] localhost systemd[1]: Listening on multipathd.socket - multipathd control socket.
+[   19.874402] localhost systemd[1]: Listening on syslog.socket - Syslog Socket.
+[   19.875704] localhost systemd[1]: Listening on systemd-fsckd.socket - fsck to fsckd communication Socket.
+[   19.876955] localhost systemd[1]: Listening on systemd-initctl.socket - initctl Compatibility Named Pipe.
+[   19.878380] localhost systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[   19.879625] localhost systemd[1]: Listening on systemd-journald.socket - Journal Socket.
+[   19.880914] localhost systemd[1]: Listening on systemd-networkd.socket - Network Service Netlink Socket.
+[   19.882169] localhost systemd[1]: systemd-pcrextend.socket - TPM2 PCR Extension (Varlink) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[   19.883510] localhost systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[   19.884710] localhost systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[   19.900451] localhost systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+[   19.902781] localhost systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+[   19.908836] localhost systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[   19.914264] localhost systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[   19.928780] localhost systemd[1]: Starting systemd-journald.service - Journal Service...
+
+# find / -type f -name "auth.log"
+/var/log/auth.log
+# awk '{ print substr($0, length($1 $2) + 3) }' /var/log/auth.log | sed -E 's/\[[0-9]+\]//g' | sort -k1,1
+chage: changed password expiry for user1
+chage: changed password expiry for user2
+chage: changed password expiry for user3
+chfn: changed user 'user2' information
+chfn: changed user 'user3' information
+chpasswd: pam_unix(chpasswd:chauthtok): password changed for root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session closed for user root
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+CRON: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+gpasswd: members of group users set by root to user2
+gpasswd: members of group users set by root to user2,user3
+groupadd: group added to /etc/group: name=shared, GID=1004
+groupadd: group added to /etc/group: name=user2, GID=1002
+groupadd: group added to /etc/group: name=user3, GID=1003
+groupadd: group added to /etc/gshadow: name=shared
+groupadd: group added to /etc/gshadow: name=user2
+groupadd: group added to /etc/gshadow: name=user3
+groupadd: new group: name=shared, GID=1004
+groupadd: new group: name=user2, GID=1002
+groupadd: new group: name=user3, GID=1003
+login: PAM adding faulty module: pam_lastlog.so
+login: PAM unable to dlopen(pam_lastlog.so): /usr/lib/security/pam_lastlog.so: cannot open shared object file: No such file or directory
+login: pam_unix(login:session): session opened for user tech(uid=1000) by tech(uid=0)
+nologin: Attempted login by root (UID: 1003) on /dev/pts/1
+nologin: Attempted login by root (UID: 1003) on /dev/pts/1
+nologin: Attempted login by root (UID: 1003) on /dev/pts/1
+nologin: Attempted login by root (UID: 1003) on /dev/pts/1
+passwd: pam_unix(passwd:chauthtok): password changed for root
+passwd: pam_unix(passwd:chauthtok): password changed for user1
+passwd: pam_unix(passwd:chauthtok): password changed for user2
+passwd: pam_unix(passwd:chauthtok): password changed for user3
+passwd: password for 'tech' changed by 'root'
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Collecting garbage unconditionally...
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Finished loading, compiling and executing 6 rules
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /etc/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Loading rules from directory /usr/share/polkit-1/rules.d
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+polkitd: Reloading rules
+(sd-pam): pam_unix(systemd-user:session): session closed for user root
+(sd-pam): pam_unix(systemd-user:session): session closed for user root
+(sd-pam): pam_unix(systemd-user:session): session closed for user root
+sshd: Accepted password for root from 172.16.8.4 port 54226 ssh2
+sshd: Accepted password for root from 172.16.8.4 port 58198 ssh2
+sshd: Accepted password for root from 172.16.8.4 port 59450 ssh2
+sshd: Accepted publickey for root from 172.16.8.4 port 33368 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 34116 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 38596 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 43506 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 44168 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 50766 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 50816 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 56876 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 58018 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Accepted publickey for root from 172.16.8.4 port 58376 ssh2: ED25519 SHA256:FW5vtZwgO9PoI05WJsISUtbLSUj3TEvlylvdECbhl6E
+sshd: Connection closed by 172.16.8.4 port 51016 [preauth]
+sshd: Connection closed by authenticating user root 172.16.8.4 port 41864 [preauth]
+sshd: Connection closed by authenticating user root 172.16.8.4 port 59440 [preauth]
+sshd: Disconnected from user root 172.16.8.4 port 33368
+sshd: Disconnected from user root 172.16.8.4 port 34116
+sshd: Disconnected from user root 172.16.8.4 port 38596
+sshd: Disconnected from user root 172.16.8.4 port 44168
+sshd: Disconnected from user root 172.16.8.4 port 50766
+sshd: Disconnected from user root 172.16.8.4 port 50816
+sshd: Disconnected from user root 172.16.8.4 port 54226
+sshd: Disconnected from user root 172.16.8.4 port 56876
+sshd: Disconnected from user root 172.16.8.4 port 58018
+sshd: Disconnected from user root 172.16.8.4 port 58198
+sshd: Disconnected from user root 172.16.8.4 port 58376
+sshd: Disconnected from user root 172.16.8.4 port 59450
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session closed for user root
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+sshd: Received disconnect from 172.16.8.4 port 33368:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 34116:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 38596:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 44168:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 50766:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 50816:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 54226:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 56876:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 58018:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 58198:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 58376:11: disconnected by user
+sshd: Received disconnect from 172.16.8.4 port 59450:11: disconnected by user
+sshd: Received signal 15; terminating.
+sshd: Received signal 15; terminating.
+sshd: Received signal 15; terminating.
+sshd: Received signal 15; terminating.
+sshd: Received signal 15; terminating.
+sshd: Received signal 15; terminating.
+sshd: Received signal 15; terminating.
+sshd: Server listening on 0.0.0.0 port 22.
+sshd: Server listening on :: port 22.
+sshd: Server listening on :: port 22.
+sshd: Server listening on :: port 22.
+sshd: Server listening on :: port 22.
+sshd: Server listening on :: port 22.
+sshd: Server listening on :: port 22.
+sshd: Server listening on :: port 22.
+sshd: Server listening on :: port 22.
+sshd: Server listening on :: port 22.
+su: pam_unix(su-l:session): session closed for user root
+su: pam_unix(su-l:session): session closed for user user1
+su: pam_unix(su-l:session): session closed for user user1
+su: pam_unix(su-l:session): session closed for user user1
+su: pam_unix(su-l:session): session closed for user user1
+su: pam_unix(su-l:session): session closed for user user1
+su: pam_unix(su-l:session): session closed for user user1
+su: pam_unix(su-l:session): session closed for user user2
+su: pam_unix(su-l:session): session closed for user user2
+su: pam_unix(su-l:session): session closed for user user2
+su: pam_unix(su-l:session): session closed for user user2
+su: pam_unix(su-l:session): session closed for user user2
+su: pam_unix(su-l:session): session closed for user user3
+su: pam_unix(su-l:session): session closed for user user3
+su: pam_unix(su-l:session): session closed for user user3
+su: pam_unix(su-l:session): session closed for user user3
+su: pam_unix(su-l:session): session opened for user root(uid=0) by tech(uid=0)
+su: pam_unix(su-l:session): session opened for user user1(uid=1001) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user1(uid=1001) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user1(uid=1001) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user1(uid=1001) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user1(uid=1001) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user1(uid=1001) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user2(uid=1002) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user2(uid=1002) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user2(uid=1002) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user2(uid=1002) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user2(uid=1002) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su-l:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su:session): session closed for user user3
+su: pam_unix(su:session): session closed for user user3
+su: pam_unix(su:session): session closed for user user3
+su: pam_unix(su:session): session closed for user user3
+su: pam_unix(su:session): session closed for user user3
+su: pam_unix(su:session): session closed for user user3
+su: pam_unix(su:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su:session): session opened for user user3(uid=1003) by root(uid=0)
+su: pam_unix(su:session): session opened for user user3(uid=1003) by root(uid=0)
+su: (to root) root on pts/0
+su: (to user1) root on pts/0
+su: (to user1) root on pts/1
+su: (to user1) root on pts/1
+su: (to user1) root on pts/1
+su: (to user1) root on pts/1
+su: (to user1) root on pts/1
+su: (to user2) root on pts/1
+su: (to user2) root on pts/1
+su: (to user2) root on pts/1
+su: (to user2) root on pts/1
+su: (to user2) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+su: (to user3) root on pts/1
+sudo: pam_unix(sudo:session): session closed for user root
+sudo: pam_unix(sudo:session): session closed for user root
+sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=1001)
+sudo: pam_unix(sudo:session): session opened for user root(uid=0) by tech(uid=1000)
+sudo:     tech : TTY=tty1 ; PWD=/home/tech ; USER=root ; COMMAND=/usr/bin/su -
+sudo:    user1 : TTY=pts/1 ; PWD=/home/user1 ; USER=root ; COMMAND=/usr/bin/dmesg
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+(systemd): pam_unix(systemd-user:session): session opened for user tech(uid=1000) by tech(uid=0)
+systemd-logind: Creating /run/nologin, blocking further logins...
+systemd-logind: New seat seat0.
+systemd-logind: New seat seat0.
+systemd-logind: New seat seat0.
+systemd-logind: New seat seat0.
+systemd-logind: New session 167 of user root.
+systemd-logind: New session 189 of user root.
+systemd-logind: New session 1 of user tech.
+systemd-logind: New session 216 of user root.
+systemd-logind: New session 245 of user root.
+systemd-logind: New session 2 of user root.
+systemd-logind: New session 33 of user root.
+systemd-logind: New session 342 of user root.
+systemd-logind: New session 36 of user root.
+systemd-logind: New session 43 of user root.
+systemd-logind: New session 4 of user root.
+systemd-logind: New session 66 of user root.
+systemd-logind: New session 70 of user root.
+systemd-logind: New session 73 of user root.
+systemd-logind: Removed session 167.
+systemd-logind: Removed session 189.
+systemd-logind: Removed session 2.
+systemd-logind: Removed session 216.
+systemd-logind: Removed session 245.
+systemd-logind: Removed session 33.
+systemd-logind: Removed session 36.
+systemd-logind: Removed session 4.
+systemd-logind: Removed session 43.
+systemd-logind: Removed session 66.
+systemd-logind: Removed session 70.
+systemd-logind: Removed session 73.
+systemd-logind: Session 167 logged out. Waiting for processes to exit.
+systemd-logind: Session 189 logged out. Waiting for processes to exit.
+systemd-logind: Session 216 logged out. Waiting for processes to exit.
+systemd-logind: Session 245 logged out. Waiting for processes to exit.
+systemd-logind: Session 2 logged out. Waiting for processes to exit.
+systemd-logind: Session 33 logged out. Waiting for processes to exit.
+systemd-logind: Session 36 logged out. Waiting for processes to exit.
+systemd-logind: Session 43 logged out. Waiting for processes to exit.
+systemd-logind: Session 4 logged out. Waiting for processes to exit.
+systemd-logind: Session 66 logged out. Waiting for processes to exit.
+systemd-logind: Session 70 logged out. Waiting for processes to exit.
+systemd-logind: Session 73 logged out. Waiting for processes to exit.
+systemd-logind: System is powering down (hypervisor initiated shutdown).
+systemd-logind: System is rebooting.
+systemd-logind: System is rebooting.
+systemd-logind: The system will reboot now!
+systemd-logind: The system will reboot now!
+systemd-logind: Watching system buttons on /dev/input/event0 (Power Button)
+systemd-logind: Watching system buttons on /dev/input/event0 (Power Button)
+systemd-logind: Watching system buttons on /dev/input/event0 (Power Button)
+systemd-logind: Watching system buttons on /dev/input/event0 (Power Button)
+systemd-logind: Watching system buttons on /dev/input/event1 (AT Translated Set 2 keyboard)
+systemd-logind: Watching system buttons on /dev/input/event1 (AT Translated Set 2 keyboard)
+systemd-logind: Watching system buttons on /dev/input/event1 (AT Translated Set 2 keyboard)
+systemd-logind: Watching system buttons on /dev/input/event1 (AT Translated Set 2 keyboard)
+useradd: add 'tech' to group 'adm'
+useradd: add 'tech' to group 'cdrom'
+useradd: add 'tech' to group 'dip'
+useradd: add 'tech' to group 'lxd'
+useradd: add 'tech' to group 'plugdev'
+useradd: add 'tech' to group 'sudo'
+useradd: add 'tech' to shadow group 'adm'
+useradd: add 'tech' to shadow group 'cdrom'
+useradd: add 'tech' to shadow group 'dip'
+useradd: add 'tech' to shadow group 'lxd'
+useradd: add 'tech' to shadow group 'plugdev'
+useradd: add 'tech' to shadow group 'sudo'
+useradd: new group: name=tech, GID=1000
+useradd: new group: name=user1, GID=1001
+useradd: new group: name=user2, GID=1002
+useradd: new group: name=user3, GID=1003
+useradd: new user: name=tech, UID=1000, GID=1000, home=/home/tech, shell=/bin/bash, from=none
+useradd: new user: name=user1, UID=1001, GID=1001, home=/home/user1, shell=/bin/bash, from=/dev/pts/0
+useradd: new user: name=user2, UID=1002, GID=1002, home=/home/user2, shell=/bin/bash, from=/dev/pts/1
+useradd: new user: name=user2, UID=1002, GID=1002, home=/home/user2, shell=/bin/sh, from=/dev/pts/1
+useradd: new user: name=user3, UID=1003, GID=1003, home=/home/user3, shell=/bin/bash, from=/dev/pts/1
+useradd: new user: name=user3, UID=1003, GID=1003, home=/home/user3, shell=/bin/sh, from=/dev/pts/1
+userdel: delete user 'user2'
+userdel: delete user 'user3'
+userdel: removed group 'user2' owned by 'user2'
+userdel: removed group 'user3' owned by 'user3'
+userdel: removed shadow group 'user2' owned by 'user2'
+userdel: removed shadow group 'user3' owned by 'user3'
+usermod: add 'user1' to group 'shared'
+usermod: add 'user1' to shadow group 'shared'
+usermod: add 'user2' to group 'shared'
+usermod: add 'user2' to shadow group 'shared'
+usermod: add 'user3' to group 'shared'
+usermod: add 'user3' to shadow group 'shared'
+usermod: change user 'user3' shell from '/bin/bash' to '/usr/sbin/nologin'
+usermod: change user 'user3' shell from '/bin/sh' to '/usr/sbin/nologin'
+
+# awk '{print $3}' /var/log/auth.log | sed -E 's/\[[0-9]+\]://' | sort | uniq -c | sort -nr
+    682 CRON
+    116 polkitd
+     82 sshd
+     66 su
+     56 systemd-logind
+     22 useradd
+     12 (systemd):
+      9 groupadd
+      8 usermod
+      6 userdel
+      6 sudo:
+      5 passwd
+      4 nologin:
+      3 (sd-pam):
+      3 login
+      3 chage
+      2 gpasswd
+      2 chfn
+      1 chpasswd
+
+# awk -F: '
+> NR == FNR {
+>   groups[$3] = $1
+>   n = split($4, users, ",")
+>   for (i = 1; i <= n; i++) {
+>     if (users[i] != "") {
+>       extra[users[i]] = extra[users[i]] ", " $1
+>     }
+>   }
+>   next
+> }
+> $7 == "/usr/sbin/nologin" {
+>   print $3 ", " $1 ", " groups[$4] extra[$1]
+> }
+> ' /etc/group /etc/passwd | sort -t, -k1,1nr
+65534, nobody, nogroup
+1003, user3, user3, users, shared
+998, systemd-network, systemd-network
+997, systemd-timesync, systemd-timesync
+992, systemd-resolve, systemd-resolve
+991, polkitd, polkitd
+989, fwupd-refresh, fwupd-refresh
+109, sshd, nogroup
+108, usbmux, plugdev
+107, landscape, landscape
+105, tcpdump, tcpdump
+104, uuidd, uuidd
+103, syslog, syslog, adm
+101, messagebus, messagebus
+42, _apt, nogroup
+39, irc, irc
+38, list, list
+34, backup, backup
+33, www-data, www-data
+13, proxy, proxy
+10, uucp, uucp
+9, news, news
+8, mail, mail
+7, lp, lp
+6, man, man
+5, games, games
+3, sys, sys
+2, bin, bin
+1, daemon, daemon
+
+# dmesg | sed -n '/kernel/p'
+[    0.101008] Booting paravirtualized kernel on KVM
+[    0.206738] Memory: 3925860K/4193760K available (22528K kernel code, 4441K rwdata, 14440K rodata, 4936K init, 4772K bss, 267640K reserved, 0K cma-reserved)
+[    0.684158] Loaded X.509 cert 'Build time autogenerated kernel key: 67dae3bf0284ce2ad34b9632cb7c8734f4f57c6c'
+[    0.865412] Loaded X.509 cert 'Build time autogenerated kernel key: 67dae3bf0284ce2ad34b9632cb7c8734f4f57c6c'
+[    0.895103] Freeing unused kernel image (initmem) memory: 4936K
+[    0.895958] Write protecting the kernel read-only data: 38912k
+[    0.897402] Freeing unused kernel image (rodata/data gap) memory: 1944K
+[  212.047997] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[  213.114469] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[  213.115676] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[  215.553178] systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+[  215.735517] systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[  215.736266] systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+[  215.737623] systemd[1]: Mounted sys-kernel-config.mount - Kernel Configuration File System.
+
+# awk 'END { print NR }' /var/log/kern.log
+692
+
+# awk '
+/^Start-Date:/ { start = $0 }
+/^Commandline:/ { cmd = $0 }
+/^End-Date:/ { print cmd " ; " start " ; " $0 }
+' /var/log/apt/history.log
+Commandline: apt-get install --reinstall apt ; Start-Date: 2025-02-16  20:51:22 ; End-Date: 2025-02-16  20:51:24
+Commandline: apt-get install --reinstall base-files ; Start-Date: 2025-02-16  20:51:26 ; End-Date: 2025-02-16  20:51:28
+Commandline: apt-get install --reinstall base-passwd ; Start-Date: 2025-02-16  20:51:31 ; End-Date: 2025-02-16  20:51:32
+Commandline: apt-get install --reinstall bash ; Start-Date: 2025-02-16  20:51:35 ; End-Date: 2025-02-16  20:51:37
+Commandline: apt-get install --reinstall bsdutils ; Start-Date: 2025-02-16  20:51:39 ; End-Date: 2025-02-16  20:51:41
+Commandline: apt-get install --reinstall coreutils ; Start-Date: 2025-02-16  20:51:44 ; End-Date: 2025-02-16  20:51:45
+Commandline: apt-get install --reinstall dash ; Start-Date: 2025-02-16  20:51:48 ; End-Date: 2025-02-16  20:51:49
+Commandline: apt-get install --reinstall debconf ; Start-Date: 2025-02-16  20:51:52 ; End-Date: 2025-02-16  20:51:53
+Commandline: apt-get install --reinstall debianutils ; Start-Date: 2025-02-16  20:51:56 ; End-Date: 2025-02-16  20:51:58
+Commandline: apt-get install --reinstall diffutils ; Start-Date: 2025-02-16  20:52:00 ; End-Date: 2025-02-16  20:52:02
+Commandline: apt-get install --reinstall dpkg ; Start-Date: 2025-02-16  20:52:04 ; End-Date: 2025-02-16  20:52:06
+Commandline: apt-get install --reinstall e2fsprogs ; Start-Date: 2025-02-16  20:52:09 ; End-Date: 2025-02-16  20:52:10
+Commandline: apt-get install --reinstall findutils ; Start-Date: 2025-02-16  20:52:13 ; End-Date: 2025-02-16  20:52:14
+Commandline: apt-get install --reinstall gcc-14-base:amd64 ; Start-Date: 2025-02-16  20:52:17 ; End-Date: 2025-02-16  20:52:18
+Commandline: apt-get install --reinstall gpgv ; Start-Date: 2025-02-16  20:52:21 ; End-Date: 2025-02-16  20:52:23
+Commandline: apt-get install --reinstall grep ; Start-Date: 2025-02-16  20:52:25 ; End-Date: 2025-02-16  20:52:27
+Commandline: apt-get install --reinstall gzip ; Start-Date: 2025-02-16  20:52:29 ; End-Date: 2025-02-16  20:52:31
+Commandline: apt-get install --reinstall hostname ; Start-Date: 2025-02-16  20:52:34 ; End-Date: 2025-02-16  20:52:35
+Commandline: apt-get install --reinstall init-system-helpers ; Start-Date: 2025-02-16  20:52:38 ; End-Date: 2025-02-16  20:52:39
+Commandline: apt-get install --reinstall libacl1:amd64 ; Start-Date: 2025-02-16  20:52:42 ; End-Date: 2025-02-16  20:52:43
+Commandline: apt-get install --reinstall libapt-pkg6.0t64:amd64 ; Start-Date: 2025-02-16  20:52:46 ; End-Date: 2025-02-16  20:52:47
+Commandline: apt-get install --reinstall libassuan0:amd64 ; Start-Date: 2025-02-16  20:52:50 ; End-Date: 2025-02-16  20:52:51
+Commandline: apt-get install --reinstall libattr1:amd64 ; Start-Date: 2025-02-16  20:52:54 ; End-Date: 2025-02-16  20:52:56
+Commandline: apt-get install --reinstall libaudit-common ; Start-Date: 2025-02-16  20:52:58 ; End-Date: 2025-02-16  20:53:00
+Commandline: apt-get install --reinstall libaudit1:amd64 ; Start-Date: 2025-02-16  20:53:02 ; End-Date: 2025-02-16  20:53:04
+Commandline: apt-get install --reinstall libblkid1:amd64 ; Start-Date: 2025-02-16  20:53:06 ; End-Date: 2025-02-16  20:53:08
+Commandline: apt-get install --reinstall libbz2-1.0:amd64 ; Start-Date: 2025-02-16  20:53:11 ; End-Date: 2025-02-16  20:53:12
+Commandline: apt-get install --reinstall libc-bin ; Start-Date: 2025-02-16  20:53:15 ; End-Date: 2025-02-16  20:53:17
+Commandline: apt-get install --reinstall libc6:amd64 ; Start-Date: 2025-02-16  20:53:19 ; End-Date: 2025-02-16  20:53:22
+Commandline: apt-get install --reinstall libcap-ng0:amd64 ; Start-Date: 2025-02-16  20:53:25 ; End-Date: 2025-02-16  20:53:26
+Commandline: apt-get install --reinstall libcap2:amd64 ; Start-Date: 2025-02-16  20:53:29 ; End-Date: 2025-02-16  20:53:30
+Commandline: apt-get install --reinstall libcom-err2:amd64 ; Start-Date: 2025-02-16  20:53:33 ; End-Date: 2025-02-16  20:53:34
+Commandline: apt-get install --reinstall libcrypt1:amd64 ; Start-Date: 2025-02-16  20:53:37 ; End-Date: 2025-02-16  20:53:38
+Commandline: apt-get install --reinstall libdebconfclient0:amd64 ; Start-Date: 2025-02-16  20:53:41 ; End-Date: 2025-02-16  20:53:42
+Commandline: apt-get install --reinstall libext2fs2t64:amd64 ; Start-Date: 2025-02-16  20:53:45 ; End-Date: 2025-02-16  20:53:46
+Commandline: apt-get install --reinstall libffi8:amd64 ; Start-Date: 2025-02-16  20:53:49 ; End-Date: 2025-02-16  20:53:50
+Commandline: apt-get install --reinstall libgcc-s1:amd64 ; Start-Date: 2025-02-16  20:53:53 ; End-Date: 2025-02-16  20:53:54
+Commandline: apt-get install --reinstall libgcrypt20:amd64 ; Start-Date: 2025-02-16  20:53:57 ; End-Date: 2025-02-16  20:53:59
+Commandline: apt-get install --reinstall libgmp10:amd64 ; Start-Date: 2025-02-16  20:54:01 ; End-Date: 2025-02-16  20:54:03
+Commandline: apt-get install --reinstall libgnutls30t64:amd64 ; Start-Date: 2025-02-16  20:54:05 ; End-Date: 2025-02-16  20:54:07
+Commandline: apt-get install --reinstall libgpg-error0:amd64 ; Start-Date: 2025-02-16  20:54:10 ; End-Date: 2025-02-16  20:54:11
+Commandline: apt-get install --reinstall libhogweed6t64:amd64 ; Start-Date: 2025-02-16  20:54:14 ; End-Date: 2025-02-16  20:54:15
+Commandline: apt-get install --reinstall libidn2-0:amd64 ; Start-Date: 2025-02-16  20:54:18 ; End-Date: 2025-02-16  20:54:19
+Commandline: apt-get install --reinstall liblz4-1:amd64 ; Start-Date: 2025-02-16  20:54:22 ; End-Date: 2025-02-16  20:54:23
+Commandline: apt-get install --reinstall liblzma5:amd64 ; Start-Date: 2025-02-16  20:54:26 ; End-Date: 2025-02-16  20:54:27
+Commandline: apt-get install --reinstall libmd0:amd64 ; Start-Date: 2025-02-16  20:54:30 ; End-Date: 2025-02-16  20:54:32
+Commandline: apt-get install --reinstall libmount1:amd64 ; Start-Date: 2025-02-16  20:54:34 ; End-Date: 2025-02-16  20:54:36
+Commandline: apt-get install --reinstall libncursesw6:amd64 ; Start-Date: 2025-02-16  20:54:38 ; End-Date: 2025-02-16  20:54:39
+Commandline: apt-get install --reinstall libnettle8t64:amd64 ; Start-Date: 2025-02-16  20:54:42 ; End-Date: 2025-02-16  20:54:43
+Commandline: apt-get install --reinstall libnpth0t64:amd64 ; Start-Date: 2025-02-16  20:54:46 ; End-Date: 2025-02-16  20:54:48
+Commandline: apt-get install --reinstall libp11-kit0:amd64 ; Start-Date: 2025-02-16  20:54:50 ; End-Date: 2025-02-16  20:54:52
+Commandline: apt-get install --reinstall libpam-modules:amd64 ; Start-Date: 2025-02-16  20:54:54 ; End-Date: 2025-02-16  20:54:56
+Commandline: apt-get install --reinstall libpam-modules-bin ; Start-Date: 2025-02-16  20:54:58 ; End-Date: 2025-02-16  20:55:00
+Commandline: apt-get install --reinstall libpam-runtime ; Start-Date: 2025-02-16  20:55:03 ; End-Date: 2025-02-16  20:55:04
+Commandline: apt-get install --reinstall libpam0g:amd64 ; Start-Date: 2025-02-16  20:55:07 ; End-Date: 2025-02-16  20:55:08
+Commandline: apt-get install --reinstall libpcre2-8-0:amd64 ; Start-Date: 2025-02-16  20:55:11 ; End-Date: 2025-02-16  20:55:12
+Commandline: apt-get install --reinstall libproc2-0:amd64 ; Start-Date: 2025-02-16  20:55:15 ; End-Date: 2025-02-16  20:55:16
+Commandline: apt-get install --reinstall libseccomp2:amd64 ; Start-Date: 2025-02-16  20:55:19 ; End-Date: 2025-02-16  20:55:20
+Commandline: apt-get install --reinstall libselinux1:amd64 ; Start-Date: 2025-02-16  20:55:23 ; End-Date: 2025-02-16  20:55:24
+Commandline: apt-get install --reinstall libsemanage-common ; Start-Date: 2025-02-16  20:55:27 ; End-Date: 2025-02-16  20:55:28
+Commandline: apt-get install --reinstall libsemanage2:amd64 ; Start-Date: 2025-02-16  20:55:31 ; End-Date: 2025-02-16  20:55:32
+Commandline: apt-get install --reinstall libsepol2:amd64 ; Start-Date: 2025-02-16  20:55:35 ; End-Date: 2025-02-16  20:55:36
+Commandline: apt-get install --reinstall libsmartcols1:amd64 ; Start-Date: 2025-02-16  20:55:38 ; End-Date: 2025-02-16  20:55:40
+Commandline: apt-get install --reinstall libss2:amd64 ; Start-Date: 2025-02-16  20:55:42 ; End-Date: 2025-02-16  20:55:44
+Commandline: apt-get install --reinstall libssl3t64:amd64 ; Start-Date: 2025-02-16  20:55:46 ; End-Date: 2025-02-16  20:55:48
+Commandline: apt-get install --reinstall libstdc++6:amd64 ; Start-Date: 2025-02-16  20:55:51 ; End-Date: 2025-02-16  20:55:52
+Commandline: apt-get install --reinstall libsystemd0:amd64 ; Start-Date: 2025-02-16  20:55:55 ; End-Date: 2025-02-16  20:55:56
+Commandline: apt-get install --reinstall libtasn1-6:amd64 ; Start-Date: 2025-02-16  20:55:59 ; End-Date: 2025-02-16  20:56:00
+Commandline: apt-get install --reinstall libtinfo6:amd64 ; Start-Date: 2025-02-16  20:56:03 ; End-Date: 2025-02-16  20:56:04
+Commandline: apt-get install --reinstall libudev1:amd64 ; Start-Date: 2025-02-16  20:56:07 ; End-Date: 2025-02-16  20:56:08
+Commandline: apt-get install --reinstall libunistring5:amd64 ; Start-Date: 2025-02-16  20:56:11 ; End-Date: 2025-02-16  20:56:13
+Commandline: apt-get install --reinstall libuuid1:amd64 ; Start-Date: 2025-02-16  20:56:15 ; End-Date: 2025-02-16  20:56:17
+Commandline: apt-get install --reinstall libxxhash0:amd64 ; Start-Date: 2025-02-16  20:56:19 ; End-Date: 2025-02-16  20:56:21
+Commandline: apt-get install --reinstall libzstd1:amd64 ; Start-Date: 2025-02-16  20:56:23 ; End-Date: 2025-02-16  20:56:25
+Commandline: apt-get install --reinstall login ; Start-Date: 2025-02-16  20:56:28 ; End-Date: 2025-02-16  20:56:29
+Commandline: apt-get install --reinstall logsave ; Start-Date: 2025-02-16  20:56:32 ; End-Date: 2025-02-16  20:56:33
+Commandline: apt-get install --reinstall mawk ; Start-Date: 2025-02-16  20:56:36 ; End-Date: 2025-02-16  20:56:37
+Commandline: apt-get install --reinstall mount ; Start-Date: 2025-02-16  20:56:39 ; End-Date: 2025-02-16  20:56:41
+Commandline: apt-get install --reinstall ncurses-base ; Start-Date: 2025-02-16  20:56:43 ; End-Date: 2025-02-16  20:56:45
+Commandline: apt-get install --reinstall ncurses-bin ; Start-Date: 2025-02-16  20:56:47 ; End-Date: 2025-02-16  20:56:49
+Commandline: apt-get install --reinstall passwd ; Start-Date: 2025-02-16  20:56:52 ; End-Date: 2025-02-16  20:56:53
+Commandline: apt-get install --reinstall perl-base ; Start-Date: 2025-02-16  20:56:55 ; End-Date: 2025-02-16  20:56:57
+Commandline: apt-get install --reinstall procps ; Start-Date: 2025-02-16  20:57:00 ; End-Date: 2025-02-16  20:57:01
+Commandline: apt-get install --reinstall sed ; Start-Date: 2025-02-16  20:57:04 ; End-Date: 2025-02-16  20:57:05
+Commandline: apt-get install --reinstall sensible-utils ; Start-Date: 2025-02-16  20:57:08 ; End-Date: 2025-02-16  20:57:09
+Commandline: apt-get install --reinstall sysvinit-utils ; Start-Date: 2025-02-16  20:57:12 ; End-Date: 2025-02-16  20:57:13
+Commandline: apt-get install --reinstall tar ; Start-Date: 2025-02-16  20:57:16 ; End-Date: 2025-02-16  20:57:17
+Commandline: apt-get install --reinstall ubuntu-keyring ; Start-Date: 2025-02-16  20:57:20 ; End-Date: 2025-02-16  20:57:21
+Commandline: apt-get install --reinstall util-linux ; Start-Date: 2025-02-16  20:57:24 ; End-Date: 2025-02-16  20:57:26
+Commandline: apt-get install --reinstall zlib1g:amd64 ; Start-Date: 2025-02-16  20:57:28 ; End-Date: 2025-02-16  20:57:30
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes upgrade ; Start-Date: 2025-02-16  20:57:34 ; End-Date: 2025-02-16  20:57:38
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes dist-upgrade ; Start-Date: 2025-02-16  20:57:39 ; End-Date: 2025-02-16  20:57:39
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install adduser apparmor apport apport-core-dump-handler apt base-passwd bcache-tools btrfs-progs busybox-initramfs ca-certificates cloud-guest-utils cloud-init coreutils cpio cryptsetup cryptsetup-bin curl dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dbus-user-session debconf dhcpcd-base distro-info-data dmeventd dmsetup dpkg dracut-install e2fsprogs ethtool fdisk fuse3 gawk gcc-14-base gettext-base gir1.2-girepository-2.0 gir1.2-glib-2.0 gpgv init-system-helpers initramfs-tools initramfs-tools-bin initramfs-tools-core iproute2 klibc-utils kmod kpartx libacl1 libaio1t64 libapparmor1 libapt-pkg6.0t64 libargon2-1 libassuan0 libattr1 libaudit-common libaudit1 libblkid1 libbpf1 libbrotli1 libbsd0 libbz2-1.0 libc6 libcap-ng0 libcap2 libcap2-bin libcbor0.10 libcom-err2 libcrypt1 libcryptsetup12 libcurl4t64 libdb5.3t64 libdbus-1-3 libdebconfclient0 libdevmapper-event1.02.1 libdevmapper1.02.1 libdrm-common libdrm2 libedit2 libelf1t64 libexpat1 libext2fs2t64 libfdisk1 libffi8 libfido2-1 libfuse3-3 libgcc-s1 libgcrypt20 libgdbm-compat4t64 libgdbm6t64 libgirepository-1.0-1 libglib2.0-0t64 libgmp10 libgnutls30t64 libgpg-error0 libgssapi-krb5-2 libhogweed6t64 libicu74 libidn2-0 libinih1 libintl-perl libisns0t64 libjson-c5 libk5crypto3 libkeyutils1 libklibc libkmod2 libkrb5-3 libkrb5support0 libldap2 liblvm2cmd2.03 liblz4-1 liblzma5 liblzo2-2 libmd0 libmnl0 libmodule-find-perl libmodule-scandeps-perl libmount1 libmpfr6 libncursesw6 libnetplan1 libnettle8t64 libnghttp2-14 libnpth0t64 libopeniscsiusr libp11-kit0 libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libpci3 libpcre2-8-0 libperl5.38t64 libpopt0 libproc-processtable-perl libproc2-0 libpsl5t64 libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib libreadline8t64 libreiserfscore0t64 librtmp1 libsasl2-2 libsasl2-modules-db libseccomp2 libselinux1 libsemanage-common libsemanage2 libsepol2 libsgutils2-1.46-2 libsigsegv2 libsmartcols1 libsort-naturally-perl libsqlite3-0 libss2 libssh-4 libssl3t64 libstdc++6 libsystemd-shared libsystemd0 libtasn1-6 libterm-readkey-perl libtinfo6 libtirpc-common libtirpc3t64 libudev1 libunistring5 liburcu8t64 libusb-1.0-0 libuuid1 libxtables12 libxxhash0 libyaml-0-2 libzstd1 linux-base logsave lsb-base lsb-release lvm2 mdadm media-types mount multipath-tools needrestart netbase netplan-generator netplan.io open-iscsi openssh-client openssl passwd pci.ids pciutils perl perl-base perl-modules-5.38 pollinate procps python-apt-common python3 python3-apport python3-apt python3-attr python3-blinker python3-certifi python3-cffi-backend python3-chardet python3-click python3-colorama python3-configobj python3-cryptography python3-dbus python3-debconf python3-distro python3-distro-info python3-distupgrade python3-gi python3-httplib2 python3-idna python3-jinja2 python3-json-pointer python3-jsonpatch python3-jsonschema python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-markupsafe python3-minimal python3-netplan python3-oauthlib python3-pkg-resources python3-problem-report python3-pyparsing python3-pyrsistent python3-requests python3-serial python3-six python3-update-manager python3-urllib3 python3-wadllib python3-xkit python3-yaml python3.12 python3.12-minimal readline-common sed sensible-utils sg3-utils sg3-utils-udev snapd squashfs-tools sudo systemd systemd-dev systemd-resolved systemd-sysv sysvinit-utils tar tzdata ubuntu-drivers-common ubuntu-keyring ubuntu-release-upgrader-core ubuntu-server-minimal ucf udev unattended-upgrades unminimize usbutils xfsprogs xxd xz-utils zlib1g lxd-installer ; Start-Date: 2025-02-16  20:57:42 ; End-Date: 2025-02-16  20:58:20
+Commandline: apt-get install --reinstall -y gdisk zstd unattended-upgrades xfsprogs multipath-tools kpartx cloud-init squashfs-tools sg3-utils pollinate packagekit-tools polkitd xml-core needrestart mdadm lvm2 libterm-readkey-perl libsort-naturally-perl libproc-processtable-perl:amd64 libmodule-scandeps-perl libmodule-find-perl libldap-common libintl-xs-perl libintl-perl libglib2.0-bin gpg-wks-client gnupg keyboxd gpgsm gpg-agent pinentry-curses gpg gnupg-utils finalrd fdisk eatmydata dmeventd dirmngr gpgconf curl initramfs-tools linux-base initramfs-tools-core cryptsetup cryptsetup-bin btrfs-progs bcache-tools appstream libsasl2-2:amd64 xz-utils xauth ubuntu-release-upgrader-core plymouth openssh-client libx11-data libedit2:amd64 groff-base gettext-base fuse3 cpio apparmor xxd xdg-user-dirs ucf systemd-timesyncd systemd-resolved sudo shared-mime-info python3-pygments networkd-dispatcher netplan.io cloud-guest-utils thin-provisioning-tools software-properties-common snapd iproute2 libcap2-bin libtirpc-common libpam-systemd:amd64 coreutils ncurses-bin mawk libsemanage-common bash base-passwd tar sysvinit-utils sensible-utils sed apt init-system-helpers hostname gzip grep gpgv findutils diffutils debconf debianutils dash adduser kmod usbutils pciutils sgml-base perl libperl5.38t64:amd64 dmsetup dhcpcd-base open-iscsi udev gawk python3-chardet lsb-release dbus-daemon dbus-bin systemd-sysv systemd python3 python3.12 readline-common ethtool netplan-generator libpam-cap:amd64 libnss-systemd:amd64 console-setup keyboard-configuration xkb-data liblocale-gettext-perl kbd ca-certificates openssl libpam-modules:amd64 python3-minimal python3.12-minimal procps passwd libpam-modules-bin logsave libpam-runtime libaudit-common mount e2fsprogs util-linux perl-base bsdutils apport libc-bin base-files login dpkg ; Start-Date: 2025-02-16  20:58:40 ; End-Date: 2025-02-16  20:59:23
+Commandline: apt-get install --reinstall -y cryptsetup-initramfs dbus dbus-session-bus-common dbus-system-bus-common distro-info-data dracut-install gcc-14-base:amd64 gnupg-l10n iso-codes libapt-pkg6.0t64:amd64 libc6:amd64 libcbor0.10:amd64 libcryptsetup12:amd64 libdb5.3t64:amd64 libdbus-1-3:amd64 libexpat1:amd64 libfuse3-3:amd64 libgcrypt20:amd64 libglib2.0-0t64:amd64 libgmp10:amd64 libgnutls30t64:amd64 libgpg-error0:amd64 libidn2-0:amd64 libjson-c5:amd64 libklibc:amd64 libkrb5-3:amd64 libksba8:amd64 libldap2:amd64 liblzma5:amd64 liblzo2-2:amd64 libmpfr6:amd64 libnettle8t64:amd64 libnghttp2-14:amd64 libopeniscsiusr libp11-kit0:amd64 libpam0g:amd64 libpcre2-8-0:amd64 libpng16-16t64:amd64 libpolkit-gobject-1-0:amd64 libpopt0:amd64 libproc2-0:amd64 libpython3-stdlib:amd64 libpython3.12-minimal:amd64 libreadline8t64:amd64 libsigsegv2:amd64 libsqlite3-0:amd64 libssh-4:amd64 libstemmer0d:amd64 libsystemd-shared:amd64 libsystemd0:amd64 libtasn1-6:amd64 libtirpc3t64:amd64 libudev1:amd64 libusb-1.0-0:amd64 libxml2:amd64 libxtables12:amd64 lsb-base ncurses-base packagekit perl-modules-5.38 publicsuffix python3-babel python3-certifi python3-colorama python3-dbus python3-gi python3-httplib2 python3-json-pointer python3-jsonpatch python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-markdown-it python3-oauthlib python3-pkg-resources python3-requests python3-rich python3-serial python3-software-properties python3-tz python3-wadllib python3-yaml systemd-dev tzdata ubuntu-drivers-common ; Start-Date: 2025-02-16  20:59:26 ; End-Date: 2025-02-16  20:59:43
+Commandline: apt-get install -y ubuntu-minimal ubuntu-standard ; Start-Date: 2025-02-16  20:59:50 ; End-Date: 2025-02-16  21:00:01
+Commandline: apt-get -y --fix-policy install ; Start-Date: 2025-02-16  21:00:04 ; End-Date: 2025-02-16  21:00:04
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install adduser apparmor apport apport-core-dump-handler apport-symptoms appstream apt apt-utils base-files base-passwd bash bash-completion bc bcache-tools bind9-dnsutils bind9-host bind9-libs bolt bsdextrautils bsdutils btrfs-progs busybox-initramfs busybox-static byobu ca-certificates cloud-guest-utils cloud-initramfs-copymods cloud-initramfs-dyn-netconf command-not-found console-setup console-setup-linux coreutils cpio cron cron-daemon-common cryptsetup cryptsetup-bin cryptsetup-initramfs curl dash dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dbus-user-session debconf debconf-i18n debianutils dhcpcd-base diffutils dirmngr distro-info distro-info-data dmeventd dmidecode dmsetup dosfstools dpkg dracut-install e2fsprogs ed eject ethtool fdisk file finalrd findutils fonts-ubuntu-console friendly-recovery ftp fuse3 fwupd fwupd-signed gawk gcc-14-base gdisk gettext-base gir1.2-girepository-2.0 gir1.2-glib-2.0 gir1.2-packagekitglib-1.0 git git-man gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm gpgv grep groff-base gzip hdparm hostname htop ibverbs-providers inetutils-telnet info init init-system-helpers initramfs-tools initramfs-tools-bin initramfs-tools-core install-info iproute2 iptables iputils-ping iputils-tracepath iso-codes jq kbd keyboard-configuration keyboxd klibc-utils kmod kpartx krb5-locales landscape-common less libacl1 libaio1t64 libapparmor1 libappstream5 libapt-pkg6.0t64 libarchive13t64 libargon2-1 libassuan0 libatasmart4 libatm1t64 libattr1 libaudit-common libaudit1 libblkid1 libblockdev-crypto3 libblockdev-fs3 libblockdev-loop3 libblockdev-mdraid3 libblockdev-nvme3 libblockdev-part3 libblockdev-swap3 libblockdev-utils3 libblockdev3 libbpf1 libbrotli1 libbsd0 libbytesize-common libbytesize1 libbz2-1.0 libc-bin libc6 libcap-ng0 libcap2 libcap2-bin libcbor0.10 libcom-err2 libcrypt1 libcryptsetup12 libcurl3t64-gnutls libcurl4t64 libdb5.3t64 libdbus-1-3 libdebconfclient0 libdevmapper-event1.02.1 libdevmapper1.02.1 libdrm-common libdrm2 libduktape207 libdw1t64 libedit2 libelf1t64 liberror-perl libestr0 libevdev2 libevent-core-2.1-7t64 libexpat1 libext2fs2t64 libfastjson4 libfdisk1 libffi8 libfido2-1 libflashrom1 libfribidi0 libftdi1-2 libfuse3-3 libfwupd2 libgcc-s1 libgcrypt20 libgdbm-compat4t64 libgdbm6t64 libgirepository-1.0-1 libglib2.0-0t64 libglib2.0-bin libglib2.0-data libgmp10 libgnutls30t64 libgpg-error0 libgpgme11t64 libgpm2 libgssapi-krb5-2 libgstreamer1.0-0 libgudev-1.0-0 libgusb2 libhogweed6t64 libibverbs1 libicu74 libidn2-0 libinih1 libintl-perl libintl-xs-perl libip4tc2 libip6tc2 libisns0t64 libjansson4 libjcat1 libjq1 libjson-c5 libjson-glib-1.0-0 libjson-glib-1.0-common libk5crypto3 libkeyutils1 libklibc libkmod2 libkrb5-3 libkrb5support0 libksba8 libldap-common libldap2 liblmdb0 liblocale-gettext-perl liblvm2cmd2.03 liblz4-1 liblzma5 liblzo2-2 libmagic-mgc libmagic1t64 libmaxminddb0 libmbim-glib4 libmbim-proxy libmbim-utils libmd0 libmm-glib0 libmnl0 libmodule-find-perl libmodule-scandeps-perl libmount1 libmpfr6 libmspack0t64 libncurses6 libncursesw6 libnetfilter-conntrack3 libnetplan1 libnettle8t64 libnewt0.52 libnfnetlink0 libnftables1 libnftnl11 libnghttp2-14 libnl-3-200 libnl-genl-3-200 libnl-route-3-200 libnpth0t64 libnspr4 libnss-systemd libnss3 libntfs-3g89t64 libnuma1 libnvme1t64 libonig5 libopeniscsiusr libp11-kit0 libpackagekit-glib2-18 libpam-cap libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libparted2t64 libpcap0.8t64 libpci3 libpcre2-8-0 libperl5.38t64 libpipeline1 libplymouth5 libpng16-16t64 libpolkit-agent-1-0 libpolkit-gobject-1-0 libpopt0 libproc-processtable-perl libproc2-0 libprotobuf-c1 libpsl5t64 libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib libpython3.12t64 libqmi-glib5 libqmi-proxy libqmi-utils libqrtr-glib0 libreadline8t64 libreiserfscore0t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libseccomp2 libselinux1 libsemanage-common libsemanage2 libsensors-config libsensors5 libsepol2 libsgutils2-1.46-2 libsigsegv2 libslang2 libsmartcols1 libsodium23 libsort-naturally-perl libsqlite3-0 libss2 libssh-4 libssl3t64 libstdc++6 libstemmer0d libsystemd-shared libsystemd0 libtasn1-6 libtcl8.6 libterm-readkey-perl libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl libtinfo6 libtirpc-common libtirpc3t64 libtraceevent1 libtraceevent1-plugin libtracefs1 libtss2-esys-3.0.2-0t64 libtss2-mu-4.0.1-0t64 libtss2-sys1t64 libtss2-tcti-cmd0t64 libtss2-tcti-device0t64 libtss2-tcti-mssim0t64 libtss2-tcti-swtpm0t64 libuchardet0 libudev1 libudisks2-0 libunistring5 libunwind8 liburcu8t64 libusb-1.0-0 libutempter0 libuuid1 libuv1t64 libvolume-key1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxkbcommon0 libxml2 libxmlb2 libxmlsec1t64 libxmlsec1t64-openssl libxmuu1 libxslt1.1 libxtables12 libxxhash0 libyaml-0-2 libzstd1 linux-base locales login logrotate logsave lsb-release lshw lsof lvm2 lxd-agent-loader lxd-installer man-db manpages mawk mdadm media-types modemmanager motd-news-config mount mtr-tiny multipath-tools nano ncurses-base ncurses-bin needrestart netbase netcat-openbsd netplan-generator netplan.io networkd-dispatcher nftables ntfs-3g numactl open-iscsi open-vm-tools openssh-client openssl overlayroot packagekit packagekit-tools parted passwd pastebinit patch pci.ids pciutils perl perl-base perl-modules-5.38 pinentry-curses plymouth plymouth-theme-ubuntu-text polkitd pollinate powermgmt-base procps psmisc publicsuffix python-apt-common python3 python3-apport python3-apt python3-attr python3-automat python3-bcrypt python3-blinker python3-boto3 python3-botocore python3-certifi python3-cffi-backend python3-chardet python3-click python3-colorama python3-commandnotfound python3-configobj python3-constantly python3-cryptography python3-dateutil python3-dbus python3-debconf python3-debian python3-distro python3-distro-info python3-distupgrade python3-gdbm python3-gi python3-hamcrest python3-httplib2 python3-hyperlink python3-idna python3-incremental python3-jmespath python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-magic python3-markdown-it python3-mdurl python3-minimal python3-netifaces python3-netplan python3-newt python3-oauthlib python3-openssl python3-packaging python3-pexpect python3-pkg-resources python3-problem-report python3-ptyprocess python3-pyasn1 python3-pyasn1-modules python3-pygments python3-pyparsing python3-requests python3-rich python3-s3transfer python3-service-identity python3-setuptools python3-six python3-software-properties python3-systemd python3-twisted python3-update-manager python3-urllib3 python3-wadllib python3-yaml python3-zope.interface python3.12 python3.12-minimal readline-common rsync rsyslog run-one sbsigntool screen secureboot-db sed sensible-utils sg3-utils sg3-utils-udev sgml-base shared-mime-info snapd software-properties-common sosreport squashfs-tools strace sudo sysstat systemd systemd-dev systemd-hwe-hwdb systemd-resolved systemd-sysv systemd-timesyncd sysvinit-utils tar tcl tcl8.6 tcpdump telnet thin-provisioning-tools time tmux tnftp tpm-udev trace-cmd tzdata ubuntu-keyring ubuntu-minimal ubuntu-pro-client ubuntu-pro-client-l10n ubuntu-release-upgrader-core ubuntu-server ubuntu-standard ucf udev udisks2 ufw unattended-upgrades update-manager-core update-notifier-common usb-modeswitch usb-modeswitch-data usb.ids usbutils util-linux uuid-runtime vim vim-common vim-runtime vim-tiny wget whiptail xauth xdg-user-dirs xfsprogs xkb-data xml-core xxd xz-utils zerofree zlib1g zstd cloud-init ; Start-Date: 2025-02-16  21:00:10 ; End-Date: 2025-02-16  21:00:28
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install grub-pc ; Start-Date: 2025-03-12  18:07:37 ; End-Date: 2025-03-12  18:08:03
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install linux-generic ; Start-Date: 2025-03-12  18:08:37 ; End-Date: 2025-03-12  18:11:58
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install openssh-server ; Start-Date: 2025-03-12  18:12:45 ; End-Date: 2025-03-12  18:13:11
+Commandline: /usr/bin/unattended-upgrades -v ; Start-Date: 2025-03-12  18:13:21 ; End-Date: 2025-03-12  18:14:11
+Commandline: apt dist-upgrade ; Start-Date: 2025-03-12  18:19:08 ; End-Date: 2025-03-12  18:21:04
+Commandline: apt install vim qemu-guest-agent ; Start-Date: 2025-03-12  18:21:23 ; End-Date: 2025-03-12  18:21:31
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:38:15 ; End-Date: 2026-10-15  06:40:20
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:40:33 ; End-Date: 2026-10-15  06:41:18
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:41:21 ; End-Date: 2026-10-15  06:41:43
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:41:45 ; End-Date: 2026-10-15  06:42:53
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:42:56 ; End-Date: 2026-10-15  06:43:37
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:43:40 ; End-Date: 2026-10-15  06:45:25
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:45:29 ; End-Date: 2026-10-15  06:46:22
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:46:26 ; End-Date: 2026-10-15  06:48:30
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:48:43 ; End-Date: 2026-10-15  06:52:33
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:52:37 ; End-Date: 2026-10-15  06:53:30
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:53:34 ; End-Date: 2026-10-15  06:59:26
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  06:59:29 ; End-Date: 2026-10-15  07:00:17
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:00:20 ; End-Date: 2026-10-15  07:01:54
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:01:58 ; End-Date: 2026-10-15  07:06:31
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:06:35 ; End-Date: 2026-10-15  07:19:45
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:19:56 ; End-Date: 2026-10-15  07:22:06
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:22:08 ; End-Date: 2026-10-15  07:26:52
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:26:55 ; End-Date: 2026-10-15  07:29:28
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:29:31 ; End-Date: 2026-10-15  07:36:50
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:36:57 ; End-Date: 2026-10-15  07:37:32
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:37:36 ; End-Date: 2026-10-15  07:40:10
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:40:22 ; End-Date: 2026-10-15  07:44:28
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:44:32 ; End-Date: 2026-10-15  07:47:46
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:47:49 ; End-Date: 2026-10-15  07:48:35
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:48:38 ; End-Date: 2026-10-15  07:49:03
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:49:11 ; End-Date: 2026-10-15  07:51:20
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:51:23 ; End-Date: 2026-10-15  07:52:50
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:52:53 ; End-Date: 2026-10-15  07:55:04
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:55:20 ; End-Date: 2026-10-15  07:59:14
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  07:59:22 ; End-Date: 2026-10-15  08:01:28
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:01:32 ; End-Date: 2026-10-15  08:03:16
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:03:21 ; End-Date: 2026-10-15  08:05:44
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:05:51 ; End-Date: 2026-10-15  08:06:32
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:06:35 ; End-Date: 2026-10-15  08:07:17
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:07:20 ; End-Date: 2026-10-15  08:08:03
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:08:09 ; End-Date: 2026-10-15  08:10:49
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:11:01 ; End-Date: 2026-10-15  08:12:47
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:12:51 ; End-Date: 2026-10-15  08:13:43
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:13:48 ; End-Date: 2026-10-15  08:15:01
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:15:08 ; End-Date: 2026-10-15  08:17:51
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:18:07 ; End-Date: 2026-10-15  08:20:32
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:20:35 ; End-Date: 2026-10-15  08:21:54
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:21:56 ; End-Date: 2026-10-15  08:22:35
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:22:43 ; End-Date: 2026-10-15  08:28:40
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:28:49 ; End-Date: 2026-10-15  08:33:51
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:33:59 ; End-Date: 2026-10-15  08:34:31
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:34:36 ; End-Date: 2026-10-15  08:36:38
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:36:41 ; End-Date: 2026-10-15  08:39:14
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:39:18 ; End-Date: 2026-10-15  08:40:13
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:40:24 ; End-Date: 2026-10-15  08:41:03
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:41:13 ; End-Date: 2026-10-15  08:42:11
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:42:15 ; End-Date: 2026-10-15  08:43:23
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:43:26 ; End-Date: 2026-10-15  08:44:33
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:44:37 ; End-Date: 2026-10-15  08:45:21
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:45:24 ; End-Date: 2026-10-15  08:47:50
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:47:53 ; End-Date: 2026-10-15  08:49:00
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:49:04 ; End-Date: 2026-10-15  08:51:07
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:51:16 ; End-Date: 2026-10-15  08:54:12
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:54:18 ; End-Date: 2026-10-15  08:54:53
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:54:58 ; End-Date: 2026-10-15  08:56:16
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:56:20 ; End-Date: 2026-10-15  08:58:58
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  08:59:02 ; End-Date: 2026-10-15  09:00:34
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:00:39 ; End-Date: 2026-10-15  09:02:22
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:02:31 ; End-Date: 2026-10-15  09:03:54
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:03:59 ; End-Date: 2026-10-15  09:04:52
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:05:03 ; End-Date: 2026-10-15  09:05:42
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:05:45 ; End-Date: 2026-10-15  09:06:12
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:06:21 ; End-Date: 2026-10-15  09:08:16
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:08:26 ; End-Date: 2026-10-15  09:21:11
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:21:17 ; End-Date: 2026-10-15  09:22:17
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:22:22 ; End-Date: 2026-10-15  09:28:28
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:28:40 ; End-Date: 2026-10-15  09:29:02
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:29:08 ; End-Date: 2026-10-15  09:30:06
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:30:10 ; End-Date: 2026-10-15  09:31:12
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:31:20 ; End-Date: 2026-10-15  09:33:42
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:33:46 ; End-Date: 2026-10-15  09:35:43
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:35:53 ; End-Date: 2026-10-15  09:37:33
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:37:39 ; End-Date: 2026-10-15  09:38:53
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:38:58 ; End-Date: 2026-10-15  09:39:20
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:39:24 ; End-Date: 2026-10-15  09:39:51
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:39:55 ; End-Date: 2026-10-15  09:41:22
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:41:25 ; End-Date: 2026-10-15  09:43:13
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:43:18 ; End-Date: 2026-10-15  09:44:24
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:44:32 ; End-Date: 2026-10-15  09:45:17
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:45:25 ; End-Date: 2026-10-15  09:46:53
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:46:57 ; End-Date: 2026-10-15  09:47:17
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:47:21 ; End-Date: 2026-10-15  09:48:10
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:48:14 ; End-Date: 2026-10-15  09:48:38
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:48:45 ; End-Date: 2026-10-15  09:49:01
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:49:05 ; End-Date: 2026-10-15  09:49:26
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:49:31 ; End-Date: 2026-10-15  09:49:46
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:49:50 ; End-Date: 2026-10-15  09:50:15
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:50:23 ; End-Date: 2026-10-15  09:51:32
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:51:36 ; End-Date: 2026-10-15  09:51:59
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:52:03 ; End-Date: 2026-10-15  09:52:31
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:52:46 ; End-Date: 2026-10-15  09:53:07
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:53:11 ; End-Date: 2026-10-15  09:53:39
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:53:46 ; End-Date: 2026-10-15  09:54:07
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:54:11 ; End-Date: 2026-10-15  09:55:03
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:55:06 ; End-Date: 2026-10-15  09:55:23
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:55:26 ; End-Date: 2026-10-15  09:56:13
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:56:17 ; End-Date: 2026-10-15  09:57:04
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-10-15  09:57:07 ; End-Date: 2026-10-15  09:57:46
+Commandline: apt install -y bzip2 ; Start-Date: 2026-10-15  12:56:53 ; End-Date: 2026-10-15  12:56:56
+Commandline: apt install -y p7zip-full ; Start-Date: 2026-10-15  13:01:05 ; End-Date: 2026-10-15  13:01:11
+

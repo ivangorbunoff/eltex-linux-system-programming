@@ -1,0 +1,91 @@
+# git config --global user.name "ivangorbunoff"
+# git config --global user.email "ivangorbunoff@mail.ru "
+# git config --global init.defaultBranch main
+# git config --global --list
+user.name=ivangorbunoff
+user.email=ivangorbunoff@mail.ru 
+init.defaultbranch=main
+
+# apt update
+# apt install git gh
+
+# ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/root/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_ed25519
+Your public key has been saved in /root/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:Era/B6E9BSevgHU8TSDRjpIIODJwtIb8AUQoqyuBTz0 root@eltex-practice2-pg1-v17
+The key's randomart image is:
++--[ED25519 256]--+
+|B=o   o+.+.      |
+|Xo..  ..B o      |
+|+*oo +o+ *       |
+|..o =.ooo o      |
+|o  o .o+S+       |
+|+ . E .o=        |
+| =   .  .o       |
+|o .      ..      |
+|.       ..       |
++----[SHA256]-----+
+
+# gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account? /root/.ssh/id_ed25519.pub
+? Title for your SSH key: eltex-practice2-pg1-v17
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: XXXX-XXXX
+Press Enter to open github.com in your browser... 
+! Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+✓ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+✓ Configured git protocol
+! Authentication credentials saved in plain text
+✓ Uploaded the SSH key to your GitHub account: /root/.ssh/id_ed25519.pub
+✓ Logged in as ivangorbunoff
+
+# gh auth setup-git --hostname github.com
+
+# gh auth status
+github.com
+  ✓ Logged in to github.com account ivangorbunoff (/root/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+
+# git clone git@github.com:ivangorbunoff/eltex-linux-system-programming.git
+Cloning into 'eltex-linux-system-programming'...
+
+# cd eltex-linux-system-programming
+# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+# git remote -v
+origin	git@github.com:ivangorbunoff/eltex-linux-system-programming.git (fetch)
+origin	git@github.com:ivangorbunoff/eltex-linux-system-programming.git (push)
+
+# mkdir -p module-1/practice-2
+# cp /root/practice2_eltex-pg1-v17_part*.log module-1/practice-2/
+
+# git add .
+# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   module-1/practice-2/practice2_eltex-pg1-v17_part1.log
+	new file:   module-1/practice-2/practice2_eltex-pg1-v17_part2.log
+	new file:   module-1/practice-2/practice2_eltex-pg1-v17_part3.log
+
+# git commit -m "Add practice 2 logs"
+

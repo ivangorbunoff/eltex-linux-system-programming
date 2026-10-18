@@ -100,7 +100,7 @@ info: Adding user `user3' to group `users' ...
 
 # usermod -s /usr/sbin/nologin user3
 
-# su - user3
+# su user3
 This account is currently not available.
 
 root@eltex-practice2-pg1-v17:~# su -l -s /bin/bash user3

@@ -88,4 +88,23 @@ Changes to be committed:
 	new file:   module-1/practice-2/practice2_eltex-pg1-v17_part3.log
 
 # git commit -m "Add practice 2 logs"
+[main a81157d] Add practice 2 logs
+ 3 files changed, 2519 insertions(+)
+ create mode 100644 module-1/practice-2/practice2_eltex-pg1-v17_part1.log
+ create mode 100644 module-1/practice-2/practice2_eltex-pg1-v17_part2.log
+ create mode 100644 module-1/practice-2/practice2_eltex-pg1-v17_part3.log
+# git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 31.09 KiB | 10.36 MiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ivangorbunoff/eltex-linux-system-programming.git
+   85e90e9..a81157d  main -> main
+# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
 

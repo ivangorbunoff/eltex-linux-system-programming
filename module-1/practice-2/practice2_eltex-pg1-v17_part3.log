@@ -108,3 +108,20 @@ Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
 
+# cd /root
+# mkdir eltex-linux-system-programming_clone
+# cd eltex-linux-system-programming_clone
+# git clone https://github.com/ivangorbunoff/eltex-linux-system-programming.git .
+Cloning into '.'...
+remote: Enumerating objects: 41, done.
+remote: Counting objects: 100% (41/41), done.
+remote: Compressing objects: 100% (30/30), done.
+remote: Total 41 (delta 9), reused 39 (delta 7), pack-reused 0 (from 0)
+Receiving objects: 100% (41/41), 1.43 MiB | 3.13 MiB/s, done.
+Resolving deltas: 100% (9/9), done.
+# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+

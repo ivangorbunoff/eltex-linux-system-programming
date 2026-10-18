@@ -125,3 +125,94 @@ Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
 
+# cd /root/eltex-linux-system-programming
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming# vi module-1/practice-2/practice2_eltex-pg1-v17_part3.log 
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   module-1/practice-2/practice2_eltex-pg1-v17_part3.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming# git add .
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming# git commit -m "practice2 logs upd agin"
+[main da40f3d] practice2 logs upd agin
+ 1 file changed, 17 insertions(+)
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming# git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming# git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 695 bytes | 695.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:ivangorbunoff/eltex-linux-system-programming.git
+   4b9614c..da40f3d  main -> main
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming# cd /root/eltex-linux-system-programming_clone
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming_clone# git fetch
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 5 (delta 2), reused 5 (delta 2), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 675 bytes | 675.00 KiB/s, done.
+From https://github.com/ivangorbunoff/eltex-linux-system-programming
+   4b9614c..da40f3d  main       -> origin/main
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming_clone# git log origin/main
+commit da40f3d4e89a276b8b47f9edc04406478ba811e9 (origin/main, origin/HEAD)
+Author: ivangorbunoff <ivangorbunoff@mail.ru>
+Date:   Sun Oct 18 12:47:00 2026 +0000
+
+    practice2 logs upd agin
+
+commit 4b9614c02314162735eb0a66a2f994fe06022060 (HEAD -> main)
+Author: ivangorbunoff <ivangorbunoff@mail.ru>
+Date:   Sun Oct 18 12:40:56 2026 +0000
+
+    practice2 logs upd
+
+commit a81157d9bf8cdcfcab98f74fda35f9f6f4e52b6e
+Author: ivangorbunoff <ivangorbunoff@mail.ru>
+Date:   Sun Oct 18 12:38:35 2026 +0000
+
+    Add practice 2 logs
+
+commit 85e90e9c4b454548a9416bb37d9cd1aa32e03770
+Author: Ivan Gorbunov <gorbunovworkacc@gmail.com>
+Date:   Thu Oct 15 00:33:51 2026 +0700
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming_clone# git diff main origin/main
+diff --git a/module-1/practice-2/practice2_eltex-pg1-v17_part3.log b/module-1/practice-2/practice2_eltex-pg1-v17_part3.log
+index cf92f0d..a9ee912 100644
+--- a/module-1/practice-2/practice2_eltex-pg1-v17_part3.log
++++ b/module-1/practice-2/practice2_eltex-pg1-v17_part3.log
+@@ -108,3 +108,20 @@ Your branch is up to date with 'origin/main'.
+ 
+ nothing to commit, working tree clean
+ 
++# cd /root
++# mkdir eltex-linux-system-programming_clone
++# cd eltex-linux-system-programming_clone
++# git clone https://github.com/ivangorbunoff/eltex-linux-system-programming.git .
++Cloning into '.'...
++remote: Enumerating objects: 41, done.
++remote: Counting objects: 100% (41/41), done.
++remote: Compressing objects: 100% (30/30), done.
++remote: Total 41 (delta 9), reused 39 (delta 7), pack-reused 0 (from 0)
++Receiving objects: 100% (41/41), 1.43 MiB | 3.13 MiB/s, done.
++Resolving deltas: 100% (9/9), done.
++# git status
++On branch main
+root@eltex-practice2-pg1-v17:~/eltex-linux-system-programming_clone# git merge
+Updating 4b9614c..da40f3d
+Fast-forward
+ module-1/practice-2/practice2_eltex-pg1-v17_part3.log | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
